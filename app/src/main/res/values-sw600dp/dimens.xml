@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //signUp frag dimensions
+
+    <dimen name="layout_height">720dp</dimen>
+    <dimen name="margin_from_sides">30dp</dimen>
+    <dimen name="height_for_all">75dp</dimen>
+    <dimen name="marging_from_layout">30dp</dimen>
+    <dimen name="textSize">22sp</dimen>
+    <dimen name="margin_botton_bw_layout">20dp</dimen>
+    <dimen name="signin_bottom_margin">80dp</dimen>
+    <dimen name="margin_bottom">35dp</dimen>
+    <dimen name="margin_bottom1">35dp</dimen>
+    <dimen name="logo_height">250dp</dimen>
+    <dimen name="bottom_layout_height">300dp</dimen>
+    <dimen name="upper_layout_hight">500dp</dimen>
+
+
+    // Login frag Dimensions
+
+    <dimen name="forget_text_size">22sp</dimen>
+    <dimen name="margin_side_parent">200dp</dimen>
+    <dimen name="topmargin_email">150dp</dimen>
+    <dimen name="text_size_email_password_login">22sp</dimen>
+    <dimen name="margin_top_login_btn">40dp</dimen>
+    <dimen name="login_now_padding">80sp</dimen>
+    <dimen name="margin_top_email_password">40dp</dimen>
+    <dimen name="facebook_margin_start">195dp</dimen>
+
+   // home fragment -------------------- ///////////////
+    <dimen name="viewpager_Image_size">300dp</dimen>
+    <dimen name="home_text_size">30sp</dimen>
+    <dimen name="viewpager_height">250dp</dimen>
+    <dimen name="dots_layout_height">50dp</dimen>
+    <dimen name="height_bottom_nav_view_toolbar">75dp</dimen>
+    <dimen name="scroll_height">550sp</dimen>
+    <dimen name="view_pager_height_1">610sp</dimen>
+    <dimen name="discountMargin_startLeft">24dp</dimen>
+    <dimen name="discount_margin_left">24sp</dimen>
+    <dimen name="discount_margin_top">60dp</dimen>
+    <dimen name="discount_text_size">40sp</dimen>
+    <dimen name="discount_content_text_size">20sp</dimen>
+    <dimen name="discount_long_text_size">18sp</dimen>
+
+    //// Newspaper fragment -------------------- ///////////////
+    <dimen name="sub_container_margin_bottom">30sp</dimen>
+    <dimen name="profile_image_height_width">80sp</dimen>
+    <dimen name="profile_name_text_size">22sp</dimen>
+    <dimen name="profile_name_text_size1">18sp</dimen>
+    <dimen name="option_margin_end">30dp</dimen>
+    <dimen name="view1_margin_top">45dp</dimen>
+
+    //// UserList fragment -------------------- ///////////////
+    <dimen name="profil_image_margin_top">18dp</dimen>
+    <dimen name="month_calculation_price">22sp</dimen>
+    <dimen name="month_calculation_price1">28sp</dimen>
+    <dimen name="month_calculation_margin_top">18dp</dimen>
+    <dimen name="month_calculation_margin_start">30dp</dimen>
+    <dimen name="magin_ruppee_symbol">423dp</dimen>
+    <dimen name="quick_action_text">22sp</dimen>
+    <dimen name="view2_margin_top">22dp</dimen>
+    <dimen name="toal_bill_margin_top">18dp</dimen>
+    <dimen name="option_menu_height">40sp</dimen>
+    <dimen name="ProfileImageWidth">170sp</dimen>
+    <dimen name="ProfileImageHeight">140sp</dimen>
+    <dimen name="personal_info_margin_top">28dp</dimen>
+    <dimen name="name_text_height">60sp</dimen>
+
+    <dimen name="editName_textSize">16sp</dimen>
+    <dimen name="newspaper_recycler_view_height">220sp</dimen>
+    <dimen name="sub_contianer_height">460sp</dimen>
+    <dimen name="main_paddin_left_right">15sp</dimen>
+    <dimen name="status_list1_text_size">22sp</dimen>
+    //// NewsPaperList fragment -------------------- ///////////////
+
+    <dimen name="newsPaper_imageWidth">55sp</dimen>
+    <dimen name="newsPaper_imageWidth1">135sp</dimen>
+
+    //// CustomerScreen fragment -------------------- ///////////////
+    <dimen name="margin_start_image">30dp</dimen>
+
+    //// Magazine_list_design -------------------- ///////////////
+    <dimen name="fav_height_width">50sp</dimen>
+    <dimen name="magazine_image_width">250sp</dimen>
+    <dimen name="magazine_image_height">170sp</dimen>
+    <dimen name="magazine_text_size">28sp</dimen>
+    <dimen name="magazine_user_text_size">22sp</dimen>
+    <dimen name="rating_text_size">16sp</dimen>
+    <dimen name="paddigng_ratting_text">10sp</dimen>
+    <dimen name="ratting_height">42sp</dimen>
+    <dimen name="rattingText_margin_top">16dp</dimen>
+    <dimen name="fav_margin_right">16dp</dimen>
+    <dimen name="userImage_width">55sp</dimen>
+    <dimen name="margin_image_start">36dp</dimen>
+    <dimen name="margin_top">16dp</dimen>
+    <dimen name="newspaper_title_text_size">28sp</dimen>
+    <dimen name="total_sale_text_size">16sp</dimen>
+    <dimen name="total_sale_text_size1">16sp</dimen>
+    <dimen name="wallet_expandableList_height">700sp</dimen>
+    <dimen name="header_constarint_height">350sp</dimen>
+    <dimen name="profile_Image_margin_top">106dp</dimen>
+    <dimen name="profile_name_text_size_wallet">28sp</dimen>
+    <dimen name="checkBox_height">35sp</dimen>
+    <dimen name="change_image_width_height">30sp</dimen>
+    <dimen name="margin_left_changeImage">140dp</dimen>
+
+</resources>

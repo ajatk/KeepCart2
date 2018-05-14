@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5sp">
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/customerlist_layout"
+        android:layout_marginTop="4sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="@dimen/userImage_width"
+            android:layout_height="@dimen/userImage_width"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="@dimen/margin_start_image"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/background_log" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Sourve Sanjwan"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="# 511,KishanGarh"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/user_name"
+            app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+       <!-- <TextView
+            android:id="@+id/user_notification"
+            android:layout_width="100sp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:padding="2sp"
+            android:text="Send Notification"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rupee"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/user_billAmount"
+            app:layout_constraintEnd_toStartOf="@+id/user_billAmount" />
+
+
+        <TextView
+            android:id="@+id/user_billAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="500"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/user_notification"
+            app:layout_constraintTop_toBottomOf="@+id/user_notification" />
+
+        <TextView
+            android:id="@+id/user_payBill"
+            android:layout_width="70sp"
+            android:layout_height="24sp"
+            android:layout_marginBottom="8sp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/button_background"
+            android:gravity="center"
+            android:text="PayBills"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/user_billAmount"
+            app:layout_constraintTop_toBottomOf="@+id/user_billAmount" />
+
+        <TextView
+            android:id="@+id/paid_status"
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/paid_background"
+            android:text="Paid"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:buttonTint="@color/Redd"
+            android:visibility="gone"
+            android:background="@color/checkbox_background_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+-->
+
+    </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

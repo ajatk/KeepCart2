@@ -1,0 +1,70 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rs.unnatBharat.fragments.Dashboard">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <CheckBox
+                android:id="@+id/btn_select"
+                android:layout_width="130sp"
+                android:layout_height="30sp"
+                android:layout_gravity="center"
+                android:buttonTint="@color/black"
+                android:gravity="center"
+                android:checked="true"
+                android:padding="5sp"
+                android:paddingLeft="10sp"
+                android:drawablePadding="1sp"
+                android:drawableTint="@color/black"
+                android:text="Select All"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btn_send"
+                android:layout_width="60dp"
+                android:layout_height="30sp"
+                android:layout_marginStart="68dp"
+                android:background="@drawable/button_background"
+                android:elevation="5sp"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:text="Send"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchView_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:queryHint="Search for Users"
+            android:background="@drawable/list_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/userlist_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchView_user" />
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

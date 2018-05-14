@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp">
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/userStatus_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_set">
+
+    <TextView
+        android:id="@+id/monthYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="March 2018"
+        android:textColor="@color/black"
+        android:textSize="@dimen/status_list1_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/paidStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="16dp"
+        android:text="Paid"
+        android:paddingLeft="25sp"
+        android:paddingRight="25sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/status_list1_text_size"
+        android:background="@drawable/paid_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/paidMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="6dp"
+        android:text="500"
+        android:textColor="@color/black"
+        android:textSize="@dimen/status_list1_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/paidStatus"
+        app:layout_constraintTop_toBottomOf="@+id/paidStatus" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:text="@string/rupee"
+        android:textColor="@color/black"
+        android:textSize="@dimen/status_list1_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/paidMoney"
+        app:layout_constraintEnd_toStartOf="@+id/paidMoney" />
+  </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+ </layout>

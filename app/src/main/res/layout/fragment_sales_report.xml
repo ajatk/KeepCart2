@@ -1,0 +1,128 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rs.unnatBharat.fragments.Dashboard">
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constarintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/main_paddin_left_right"
+        android:paddingRight="@dimen/main_paddin_left_right">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/salesReport_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_background_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabSelectedTextColor="@color/Redd"
+            app:tabTextColor="@color/black" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/salesReport_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="2dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/salesReport_tabLayout" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:elevation="20sp"
+            android:background="@drawable/list_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/salesReport_viewPager">
+
+            <TextView
+                android:id="@+id/customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:text="Total Sale"
+                android:textColor="@color/black"
+                android:textSize="@dimen/total_sale_text_size1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rupeeSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/rupee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/total_sale_text_size1"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/customer"
+                app:layout_constraintStart_toEndOf="@+id/customer" />
+
+            <TextView
+                android:id="@+id/totalSale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="500.00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/total_sale_text_size1"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol"
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol" />
+
+            <TextView
+                android:id="@+id/amountD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Amount Due"
+                android:textColor="@color/black"
+                android:textSize="@dimen/total_sale_text_size1"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol4"
+                app:layout_constraintEnd_toStartOf="@+id/rupeeSymbol4" />
+
+            <TextView
+                android:id="@+id/rupeeSymbol4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="3dp"
+                android:text="@string/rupee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/total_sale_text_size1"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/amounteDue"
+                app:layout_constraintEnd_toStartOf="@+id/amounteDue" />
+
+            <TextView
+                android:id="@+id/amounteDue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="5dp"
+                android:text="500.00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/total_sale_text_size1"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

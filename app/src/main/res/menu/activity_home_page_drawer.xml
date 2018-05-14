@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item
+        android:id="@+id/home_"
+        android:icon="@drawable/home_icon"
+        android:title="Home" />
+    <item
+        android:id="@+id/plans_pack"
+        android:icon="@drawable/active_plan_and_packs"
+        android:title="Active Plans &amp; Pack" />
+    <item
+        android:id="@+id/shop_extra"
+        android:icon="@drawable/shop_and_extra"
+        android:title="Shop &amp; Extra" />
+    <item
+        android:id="@+id/bills_payment"
+        android:icon="@drawable/bill_and_payments"
+        android:title="Bills &amp; Payment" />
+
+    <item
+        android:id="@+id/my_profile"
+        android:icon="@drawable/my_profile"
+        android:title="My Profile" />
+    <item
+        android:id="@+id/my_account"
+        android:icon="@drawable/my_account"
+        android:title="My Account" />
+    <item
+        android:id="@+id/request_shift"
+        android:icon="@drawable/request_to_shift"
+        android:title="Request to Shift" />
+    <item
+        android:id="@+id/vender_refer"
+        android:icon="@drawable/vendor_refer_and_earn"
+        android:title="Vender Refer &amp; Earn" />
+    <item
+        android:id="@+id/vender_sales"
+        android:icon="@drawable/vendor_sales_and_report"
+        android:title="Vender Sales &amp; Report" />
+
+</menu>

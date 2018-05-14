@@ -1,0 +1,25 @@
+<layout  xmlns:app="http://schemas.android.com/apk/res-auto"
+         xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingLeft="10sp"
+          android:paddingRight="10sp"
+          android:orientation="vertical" >
+        <TextView
+            android:id="@+id/childListItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_set"
+            android:paddingBottom="5dp"
+            android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
+            android:paddingTop="5dp"
+            android:text="set here"
+            android:textColor="@color/black"
+            android:textSize="17dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+</layout>

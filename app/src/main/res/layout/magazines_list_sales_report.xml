@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp">
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/newslist_layout"
+            android:background="@color/gray_set"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="@dimen/newsPaper_imageWidth1"
+                android:layout_height="@dimen/newsPaper_imageWidth1"
+                android:layout_marginBottom="18dp"
+                android:layout_marginStart="@dimen/margin_image_start"
+                android:layout_marginTop="16sp"
+                android:clickable="false"
+                android:src="@drawable/profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                 />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_image_start"
+                android:layout_marginTop="@dimen/margin_top"
+                android:text="Amar Ujala"
+                android:textSize="@dimen/newspaper_title_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/user_nextPage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Total Sale"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/user_name"
+                app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+            <TextView
+                android:id="@+id/rupeeSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/rupee"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/customer"
+                app:layout_constraintStart_toEndOf="@+id/customer" />
+
+            <TextView
+                android:id="@+id/totalSale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="500"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol"
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol" />
+            <TextView
+                android:id="@+id/pendingS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Pending Sale"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/customer"
+                app:layout_constraintTop_toBottomOf="@+id/customer" />
+
+            <TextView
+                android:id="@+id/rupeeSymbol2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/rupee"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/pendingS"
+                app:layout_constraintStart_toEndOf="@+id/pendingS" />
+            <TextView
+                android:id="@+id/pendingSale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="500"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol2"
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol2" />
+            <TextView
+                android:id="@+id/amountR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Amount Recieve"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/pendingS"
+                app:layout_constraintTop_toBottomOf="@+id/pendingS" />
+
+            <TextView
+                android:id="@+id/rupeeSymbol3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/rupee"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/amountR"
+                app:layout_constraintStart_toEndOf="@+id/amountR" />
+            <TextView
+                android:id="@+id/amounteRecieve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="500"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol3"
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol3" />
+            <TextView
+                android:id="@+id/amountD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Amount Due"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/amountR"
+                app:layout_constraintTop_toBottomOf="@+id/amountR" />
+
+            <TextView
+                android:id="@+id/rupeeSymbol4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/rupee"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/amountD"
+                app:layout_constraintStart_toEndOf="@+id/amountD" />
+            <TextView
+                android:id="@+id/amounteDue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="500"
+                android:textSize="@dimen/total_sale_text_size"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol4"
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol4" />
+
+            <TextView
+                android:id="@+id/user_nextPage"
+                android:layout_width="1sp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_image_start"
+                android:background="@color/black"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                app:layout_constraintStart_toEndOf="@+id/user_image"
+                tools:layout_editor_absoluteY="0dp" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>
