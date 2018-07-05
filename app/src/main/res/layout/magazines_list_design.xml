@@ -16,12 +16,13 @@
          <ImageView
             android:id="@+id/magazine_image"
             android:layout_width="@dimen/magazine_image_width"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/magazine_image_width"
+            android:scaleType="fitXY"
             android:layout_marginStart="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/background_log"  />
+             android:layout_marginLeft="5dp" />
 
            <TextView
                android:id="@+id/magazineName"
@@ -34,7 +35,8 @@
                android:textSize="@dimen/magazine_text_size"
                android:textStyle="bold"
                app:layout_constraintStart_toEndOf="@+id/magazine_image"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_marginLeft="13dp" />
 
            <TextView
                android:id="@+id/magazineCount"
@@ -46,7 +48,8 @@
                android:textSize="@dimen/magazine_text_size"
                android:textStyle="bold"
                app:layout_constraintBaseline_toBaselineOf="@+id/magazineName"
-               app:layout_constraintStart_toEndOf="@+id/magazineName" />
+               app:layout_constraintStart_toEndOf="@+id/magazineName"
+               android:layout_marginLeft="4dp" />
 
             <TextView
                 android:id="@+id/noOfUsers"
@@ -68,7 +71,8 @@
                android:textColor="@color/black"
                android:textSize="@dimen/magazine_user_text_size"
                app:layout_constraintBaseline_toBaselineOf="@+id/noOfUsers"
-               app:layout_constraintStart_toEndOf="@+id/noOfUsers" />
+               app:layout_constraintStart_toEndOf="@+id/noOfUsers"
+               android:layout_marginLeft="4dp" />
 
             <RatingBar
                 android:id="@+id/ratingBar"
@@ -107,9 +111,11 @@
                android:layout_height="@dimen/fav_height_width"
                android:layout_marginEnd="@dimen/fav_margin_right"
                android:layout_marginTop="16dp"
+               android:visibility="gone"
                android:src="@drawable/favorite_border"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toTopOf="parent" />
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_marginRight="@dimen/fav_margin_right" />
 
            <TextView
                android:id="@+id/rupee_"
@@ -120,7 +126,8 @@
                android:textColor="@color/black"
                android:textSize="@dimen/magazine_user_text_size"
                app:layout_constraintBaseline_toBaselineOf="@+id/price"
-               app:layout_constraintEnd_toStartOf="@+id/price" />
+               app:layout_constraintEnd_toStartOf="@+id/price"
+               android:layout_marginRight="4dp" />
 
            <TextView
                android:id="@+id/price"
@@ -132,7 +139,8 @@
                android:textColor="@color/black"
                android:textSize="@dimen/magazine_user_text_size"
                app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintEnd_toEndOf="parent" />
+               app:layout_constraintEnd_toEndOf="parent"
+               android:layout_marginRight="@dimen/fav_margin_right" />
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>
 

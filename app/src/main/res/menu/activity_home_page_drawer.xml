@@ -3,23 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-
     <item
         android:id="@+id/home_"
         android:icon="@drawable/home_icon"
+        android:iconTint="@color/gray_set"
+
         android:title="Home" />
-    <item
-        android:id="@+id/plans_pack"
-        android:icon="@drawable/active_plan_and_packs"
-        android:title="Active Plans &amp; Pack" />
-    <item
+
+    <!--Active Plans &amp; Pack-->
+   <!-- <item
         android:id="@+id/shop_extra"
         android:icon="@drawable/shop_and_extra"
-        android:title="Shop &amp; Extra" />
-    <item
+        android:title="Shop &amp; Extra" />-->
+   <!-- <item
         android:id="@+id/bills_payment"
         android:icon="@drawable/bill_and_payments"
-        android:title="Bills &amp; Payment" />
+        android:title="Bills &amp; Payment" />-->
 
     <item
         android:id="@+id/my_profile"
@@ -30,16 +29,34 @@
         android:icon="@drawable/my_account"
         android:title="My Account" />
     <item
+        android:id="@+id/plans_pack"
+        android:icon="@drawable/active_plan_and_packs"
+        android:title="offers" />
+    <item
         android:id="@+id/request_shift"
         android:icon="@drawable/request_to_shift"
         android:title="Request to Shift" />
-    <item
+    <!--<item
         android:id="@+id/vender_refer"
         android:icon="@drawable/vendor_refer_and_earn"
-        android:title="Vender Refer &amp; Earn" />
+        android:title="Vender Refer &amp; Earn" />-->
     <item
         android:id="@+id/vender_sales"
         android:icon="@drawable/vendor_sales_and_report"
         android:title="Vender Sales &amp; Report" />
+     <item
+        android:id="@+id/aboutusTxt"
+        android:icon="@drawable/locks"
+        android:title="About Us" />
+
+   <!-- <item
+        android:id="@+id/contactusTxt"
+        android:icon="@drawable/bill_and_payments"
+        android:title="Contact Us" />-->
+
+    <item
+        android:id="@+id/vender_logout"
+        android:icon="@android:drawable/ic_lock_lock"
+        android:title="Logout" />
 
 </menu>

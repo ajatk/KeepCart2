@@ -37,6 +37,9 @@ public class Resource<T> {
     public static <T> Resource<T> message(String msg) {
         return new Resource<>(ApplicationConstants.SHOW_ONLY_MSG, null, msg);
     }
+    public static <T> Resource<T> newsMessage(String msg) {
+        return new Resource<>(ApplicationConstants.SHOW_ONLY_MSG, null, msg);
+    }
 
 
 }

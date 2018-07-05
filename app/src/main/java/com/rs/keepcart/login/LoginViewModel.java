@@ -20,11 +20,11 @@ public class LoginViewModel extends ViewModel {
     MutableLiveData<Resource<LoginModelClass>> loginLiveData = new MutableLiveData<>();
     LoginInfoModel loginInfoModel;
 
-    public void loginApi(LoginInfoModel loginInfoModel) {
+    public void loginApii(LoginInfoModel loginInfoModel) {
         this.loginInfoModel = loginInfoModel;
         loginLiveData.setValue(Resource.loading());
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<LoginModelClass> call = apiInterface.getLoginCall(loginInfoModel.getEmail(),
+        Call<LoginModelClass> call = apiInterface.getLoginCall(loginInfoModel.getVendor_Email(),
                 loginInfoModel.getPassword() /*loginInfoModel.getAccountNo()),
                 loginInfoModel.getBankName()*/);
         call.enqueue(new Callback<LoginModelClass>() {
@@ -34,9 +34,10 @@ public class LoginViewModel extends ViewModel {
                     if (response.isSuccessful()) {
                         LoginModelClass loginModelClass = response.body();
                         if (loginModelClass.getStatus() == 200) {
-                            addToSharedPreference(loginModelClass);
+                            addToSharedPreference(loginInfoModel);
 
-
+                            MySharedData.setGeneralSaveSession("userId",loginModelClass.getVendorID());
+                            MySharedData.setGeneralSaveSession("vendor_Nam",loginModelClass.getVendorName());
                         }
                         loginLiveData.setValue(Resource.success(loginModelClass, ""));
                     } else {
@@ -54,10 +55,13 @@ public class LoginViewModel extends ViewModel {
         });
     }
 
-    private void addToSharedPreference(LoginModelClass loginModelClass) {
-        MySharedData.setGeneralSaveSession("Id",loginModelClass.getEmailid());
-        MySharedData.setGeneralSaveSession("PhoneNo",loginModelClass.getPhoneNo());
+    private void addToSharedPreference(LoginInfoModel loginInfoModel) {
+        /*MySharedData.setGeneralSaveSession("Id",loginModelClass.getEmailid());
+        MySharedData.setGeneralSaveSession("PhoneNo",loginModelClass.getPhoneNo());*/
 
-        MySharedData.setGeneralSaveSession("userId",loginModelClass.getUserid());
+
+        MySharedData.setGeneralSaveSession("pass",loginInfoModel.getPassword());
+        MySharedData.setGeneralSaveSession("vender_email",loginInfoModel.getVendor_Email());
+
     }
 }

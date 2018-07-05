@@ -1,0 +1,169 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.design.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpagerfragemnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/viewpager_height"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/white"
+                    app:layout_collapseMode="parallax"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <LinearLayout
+                    android:id="@+id/sliderdots"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dots_layout_height"
+                    android:layout_marginTop="@dimen/dots_margin_user_dashBoard"
+                    android:elevation="5.0dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    app:layout_collapseMode="pin" />
+            </RelativeLayout>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayoutFrag"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/home_tabLayout_height"
+                android:layout_marginTop="0dp"
+                android:background="#ddd"
+                android:elevation="5sp"
+                app:tabGravity="center"
+                app:tabSelectedTextColor="@color/Redd"
+                app:tabTextColor="@color/black" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_pager_height_1"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_marginTop="1sp"
+                android:layout_gravity="bottom"
+                android:background="@color/white"
+                 />
+        </android.support.design.widget.AppBarLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+   <!-- <android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpagerfragemnt"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/viewpager_height"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        &lt;!&ndash; <TextView
+             android:id="@+id/discount"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="@dimen/discount_margin_left"
+             android:layout_marginTop="@dimen/discount_margin_top"
+             android:text="50%"
+             android:textSize="@dimen/discount_text_size"
+             android:textColor="@color/black"
+             android:textStyle="bold"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="@+id/viewpagerfragemnt"
+             android:layout_marginLeft="@dimen/discount_margin_left" />
+
+         <TextView
+             android:id="@+id/text1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="4dp"
+             android:layout_marginStart="8dp"
+             android:text="Off"
+             android:textSize="@dimen/discount_content_text_size"
+             android:textColor="@color/black"
+             android:textStyle="bold"
+             app:layout_constraintBottom_toTopOf="@+id/text2"
+             app:layout_constraintStart_toEndOf="@+id/discount" />
+
+         <TextView
+             android:id="@+id/text2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="8dp"
+             android:text="on first booking"
+             android:textAllCaps="true"
+             android:textColor="@color/black"
+             android:textSize="@dimen/discount_long_text_size"
+             app:layout_constraintStart_toStartOf="@+id/discount"
+             app:layout_constraintTop_toBottomOf="@+id/discount" />&ndash;&gt;
+
+        <LinearLayout
+            android:id="@+id/sliderdots"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dots_layout_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp"
+            android:elevation="2.0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/tabLayoutFrag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayoutFrag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#ddd"
+            android:capitalize="sentences"
+            android:elevation="2sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewpagerfragemnt"
+            app:tabGravity="center"
+            app:tabSelectedTextColor="@color/Redd"
+            app:tabTextColor="@color/black" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_pager_height_1"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:focusable="true"
+
+            app:layout_constraintTop_toBottomOf="@+id/tabLayoutFrag" />
+
+    </android.support.constraint.ConstraintLayout>-->
+</layout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar123"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/Redd"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/srch_toolbar_layout"
+            android:layout_width="@dimen/edittext_layout_width"
+            android:layout_height="@dimen/edittext_layout_height"
+            >
+
+
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="8sp"
+                android:paddingTop="8sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageView7"
+                app:layout_constraintStart_toEndOf="@+id/page_title"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="NotSibling" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:background="@color/Redd"
+            >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/Redd">
+
+            <ImageView
+                android:id="@+id/myCart_"
+                android:layout_width="@dimen/cart_icon_width"
+                android:layout_height="@dimen/cart_icon_height"
+                android:layout_marginTop="5dp"
+                android:padding="2sp"
+                android:src="@drawable/cart"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="40dp"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/notification_image"
+                android:layout_width="@dimen/cart_icon_width"
+                android:layout_height="@dimen/cart_icon_height"
+                android:layout_marginTop="5dp"
+                android:padding="3sp"
+                android:src="@drawable/notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.225"
+                app:layout_constraintStart_toEndOf="@+id/myCart_"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/cartItems"
+                android:layout_width="@dimen/cartcount_height_width"
+                android:layout_height="@dimen/cartcount_height_width"
+                android:layout_marginBottom="@dimen/cart_count_margin_bottom"
+                android:layout_marginEnd="@dimen/text_Count_marginRight"
+                android:background="@drawable/background_cart"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="@color/Redd"
+                android:textSize="@dimen/notification_count_text_sixe"
+                app:layout_constraintBottom_toBottomOf="@+id/myCart_"
+                app:layout_constraintEnd_toStartOf="@+id/notification_image"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/text_Count_marginRight" />
+
+            <TextView
+                android:id="@+id/notificationCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_botom_notificationCount"
+                android:layout_marginEnd="@dimen/margin_right_notificationCount"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="@color/Redd"
+                android:textSize="@dimen/notification_count_text_sixe"
+                app:layout_constraintBottom_toBottomOf="@+id/notification_image"
+                app:layout_constraintEnd_toEndOf="@+id/notification_image"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/margin_right_notificationCount" />
+        </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="33dp" />
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="@dimen/cart_icon_width"
+        android:layout_height="@dimen/cart_icon_height"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:padding="5sp"
+        android:onClick="backButton"
+        android:backgroundTint="@color/gray_set"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/arrow_back"
+        android:layout_marginLeft="10dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/page_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Use"
+            android:paddingTop="@dimen/pading_top_toolbar_tilte"
+            android:textColor="#ffffff"
+            android:textColorHint="#d6d3d3"
+            android:textSize="@dimen/location_text_size"
+            android:textStyle="bold"
+            android:elevation="2sp"
+            />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

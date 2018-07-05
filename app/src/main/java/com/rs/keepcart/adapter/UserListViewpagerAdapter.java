@@ -5,8 +5,11 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 
-import com.rs.keepcart.fragments.NewUser;
+import com.rs.keepcart.userlist.NewUser;
+
+import java.util.ArrayList;
 
 /**
  * Created by sam on 4/30/2018.
@@ -15,16 +18,22 @@ import com.rs.keepcart.fragments.NewUser;
 public class UserListViewpagerAdapter extends FragmentStatePagerAdapter {
     String a[] = {"All", "New","Stoped"};
     private Context context;
+    private ArrayList<Fragment> mfragmentsList = new ArrayList<>();
 
-    public UserListViewpagerAdapter(Context context, FragmentManager fm) {
+    public UserListViewpagerAdapter(ViewPager viewPager, Context context, FragmentManager fm, ArrayList<Fragment> fragmentList) {
         super(fm);
         this.context = context;
+        viewPager.setOffscreenPageLimit(3);
+        mfragmentsList = fragmentList;
+
     }
 
 
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
+
+        return mfragmentsList.get(position);
+       /* if (position == 0) {
 
             return new NewUser();
         }  else if(position==1) {
@@ -32,13 +41,19 @@ public class UserListViewpagerAdapter extends FragmentStatePagerAdapter {
             return new NewUser();
         } else {
             return new NewUser();
-        }
+        }*/
 
     }
 
     @Override
     public int getCount() {
-        return 3;
+        if(mfragmentsList!=null)
+        {
+            return mfragmentsList.size();
+        }else {
+            return 0;
+        }
+
     }
 
     @Nullable

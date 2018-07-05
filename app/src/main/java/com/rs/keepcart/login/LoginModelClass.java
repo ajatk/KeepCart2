@@ -12,18 +12,54 @@ public class LoginModelClass {
     @SerializedName("status")
     @Expose
     private Integer status;
-    @SerializedName("userid")
+    @SerializedName("active_status")
     @Expose
-    private String userid;
-    @SerializedName("emailid")
+    private Integer activeStatus;
+    @SerializedName("Vendor_Name")
     @Expose
-    private String emailid;
-    @SerializedName("phone_no")
+    private String vendorName;
+    @SerializedName("Vendor_Email")
     @Expose
-    private String phoneNo;
-    @SerializedName("username")
+    private String vendorEmail;
+    @SerializedName("Vendor_ID")
     @Expose
-    private String username;
+    private String vendorID;
+    @SerializedName("Vendor_Mobile")
+    @Expose
+    private String vendorMobile;
+    @SerializedName("Vendor_Job")
+    @Expose
+    private Object vendorJob;
+
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public LoginModelClass() {
+    }
+
+    /**
+     * 
+     * @param message
+     * @param vendorEmail
+     * @param vendorJob
+     * @param vendorID
+     * @param vendorName
+     * @param status
+     * @param activeStatus
+     * @param vendorMobile
+     */
+    public LoginModelClass(String message, Integer status, Integer activeStatus, String vendorName, String vendorEmail, String vendorID, String vendorMobile, Object vendorJob) {
+        super();
+        this.message = message;
+        this.status = status;
+        this.activeStatus = activeStatus;
+        this.vendorName = vendorName;
+        this.vendorEmail = vendorEmail;
+        this.vendorID = vendorID;
+        this.vendorMobile = vendorMobile;
+        this.vendorJob = vendorJob;
+    }
 
     public String getMessage() {
         return message;
@@ -41,36 +77,52 @@ public class LoginModelClass {
         this.status = status;
     }
 
-    public String getUserid() {
-        return userid;
+    public Integer getActiveStatus() {
+        return activeStatus;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setActiveStatus(Integer activeStatus) {
+        this.activeStatus = activeStatus;
     }
 
-    public String getEmailid() {
-        return emailid;
+    public String getVendorName() {
+        return vendorName;
     }
 
-    public void setEmailid(String emailid) {
-        this.emailid = emailid;
+    public void setVendorName(String vendorName) {
+        this.vendorName = vendorName;
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
+    public String getVendorEmail() {
+        return vendorEmail;
     }
 
-    public void setPhoneNo(String phoneNo) {
-        this.phoneNo = phoneNo;
+    public void setVendorEmail(String vendorEmail) {
+        this.vendorEmail = vendorEmail;
     }
 
-    public String getUsername() {
-        return username;
+    public String getVendorID() {
+        return vendorID;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setVendorID(String vendorID) {
+        this.vendorID = vendorID;
+    }
+
+    public String getVendorMobile() {
+        return vendorMobile;
+    }
+
+    public void setVendorMobile(String vendorMobile) {
+        this.vendorMobile = vendorMobile;
+    }
+
+    public Object getVendorJob() {
+        return vendorJob;
+    }
+
+    public void setVendorJob(Object vendorJob) {
+        this.vendorJob = vendorJob;
     }
 
 }

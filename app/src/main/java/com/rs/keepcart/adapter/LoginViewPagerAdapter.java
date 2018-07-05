@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.rs.keepcart.fragments.SignUp;
+import com.rs.keepcart.login.SignUp;
 import com.rs.keepcart.login.SignIn;
 
 /**

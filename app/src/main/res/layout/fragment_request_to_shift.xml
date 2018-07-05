@@ -1,0 +1,63 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rs.keepcart.fragments.RequestToShift">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10sp"
+        android:padding="10sp">
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <EditText
+          android:id="@+id/selectUser"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="32dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="40dp"
+          android:drawableBottom="@drawable/login_underline"
+          android:hint="@string/select_user"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <EditText
+          android:id="@+id/shift_address"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="32dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="32dp"
+          android:drawableBottom="@drawable/login_underline"
+          android:ems="10"
+          android:hint="@string/Address_here"
+          android:inputType="textPersonName"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.6"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/selectUser" />
+
+      <Button
+          android:id="@+id/button2"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="32dp"
+          android:layout_marginStart="32dp"
+          android:layout_marginTop="40dp"
+          android:text="Request to shift"
+          android:textAllCaps="false"
+          android:textColor="@color/white"
+          android:background="@drawable/button_background"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/shift_address" />
+
+
+  </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

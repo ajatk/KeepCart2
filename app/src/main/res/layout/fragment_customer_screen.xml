@@ -4,15 +4,15 @@
     tools:context="com.rs.unnatBharat.fragments.Dashboard">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <android.support.v7.widget.SearchView
             android:id="@+id/searchView_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="15sp"
-            android:layout_marginRight="6sp"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
             android:background="@drawable/list_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -21,11 +21,13 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/userlist_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginTop="5dp"
             android:paddingLeft="@dimen/main_paddin_left_right"
             android:paddingRight="@dimen/main_paddin_left_right"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/searchView_user" />

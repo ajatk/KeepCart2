@@ -24,7 +24,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/background_log" />
+                app:srcCompat="@drawable/background_log"
+                android:layout_marginLeft="@dimen/margin_image_start" />
 
             <TextView
                 android:id="@+id/user_name"
@@ -37,7 +38,8 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/user_nextPage"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="@dimen/margin_image_start" />
 
             <TextView
                 android:id="@+id/customer"
@@ -60,7 +62,8 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/customer"
-                app:layout_constraintStart_toEndOf="@+id/customer" />
+                app:layout_constraintStart_toEndOf="@+id/customer"
+                android:layout_marginLeft="8dp" />
 
             <TextView
                 android:id="@+id/totalSale"
@@ -72,7 +75,8 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol"
-                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol" />
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol"
+                android:layout_marginLeft="3dp" />
             <TextView
                 android:id="@+id/pendingS"
                 android:layout_width="wrap_content"
@@ -94,7 +98,8 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/pendingS"
-                app:layout_constraintStart_toEndOf="@+id/pendingS" />
+                app:layout_constraintStart_toEndOf="@+id/pendingS"
+                android:layout_marginLeft="6dp" />
             <TextView
                 android:id="@+id/pendingSale"
                 android:layout_width="wrap_content"
@@ -105,7 +110,8 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol2"
-                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol2" />
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol2"
+                android:layout_marginLeft="3dp" />
             <TextView
                 android:id="@+id/amountR"
                 android:layout_width="wrap_content"
@@ -127,7 +133,8 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/amountR"
-                app:layout_constraintStart_toEndOf="@+id/amountR" />
+                app:layout_constraintStart_toEndOf="@+id/amountR"
+                android:layout_marginLeft="6dp" />
             <TextView
                 android:id="@+id/amounteRecieve"
                 android:layout_width="wrap_content"
@@ -138,13 +145,14 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/rupeeSymbol3"
-                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol3" />
+                app:layout_constraintStart_toEndOf="@+id/rupeeSymbol3"
+                android:layout_marginLeft="3dp" />
             <TextView
                 android:id="@+id/amountD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Amount Recieve"
+                android:text="Amount Due"
                 android:textSize="@dimen/total_sale_text_size"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="@+id/amountR"

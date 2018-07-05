@@ -16,12 +16,35 @@
 
     <string name="rupee">\u20B9</string>
     <string name="app_namehindi">KeepCart</string>
-    <string name="Address_here">Shri Hanuman </string>
+    <string name="Address_here">Address here </string>
     <string name="google_app_name">G+ Login</string>
     <string name="nest">nest</string>
     <string name="location_text_32">Sector-32 Chandigarh</string>
 
+    <string name="select_user">Select User</string>
+    <string name="user_toolbar_title">User</string>
+    <string name="salesRreport_toolbar_title">Sales Report</string>
+    <string name="newspaper_toolbar_title">NewsPaper List</string>
+    <string name="magazines_toolbar_title">Magazines List</string>
+    <string name="customerScreeen_toolbar_title">Customer Screeen</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Coming Soon fragment</string>
+    <string name="title_activity_user_home">UserHomeActivity</string>
+    <string name="all_user_title">All User</string>
+    <string name="user_status">Month History</string>
+    <string name="vendor_proccess_message">You have successfully submit, please wait for your Id and Password Activation ...We will notify you soon. approx (72 hrs) ...</string>
+    <string name="keepcart_newspaper">Keepcart is a newspaper / magazine billing and payment solution for vendors and
+        distributors with other service like household units and utility services headquartered in Mohali, Punjab.
+        Its aim is to make the collection and payment process more smooth, easy and efficient for newspaper and magazine
+        vendors / distributors. </string>
+    <string name="keepcart_Services">Contact Us :-
+
+        Keepcart Services ,
+        SCO 6, Vasant Vihar, Phase 2,
+        Himmatgarh, Zirakpur, Dhakoli,
+        Mohali, Punjab, 140603</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
 
 </resources>

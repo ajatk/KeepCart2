@@ -17,7 +17,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tabGravity="fill"
+            app:tabPaddingEnd="10sp"
             android:textSize="11sp"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="@color/Redd"

@@ -1,0 +1,143 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.rs.unnatBharat.login.SignUpActivity"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/splash_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:layout_marginEnd="@dimen/margin_from_sides"
+            android:layout_marginStart="@dimen/margin_from_sides"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/constraint_corners_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+            <ProgressBar
+                android:id="@+id/progressBar_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/continue_app"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_for_all"
+                android:layout_marginEnd="@dimen/marging_from_layout"
+                android:layout_marginStart="@dimen/marging_from_layout"
+                android:layout_marginTop="34dp"
+                android:background="@drawable/button_background"
+                android:text="Proccessing......"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSize"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/status" />
+
+            <EditText
+                android:id="@+id/mobileno"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_for_all"
+                android:layout_marginBottom="@dimen/margin_botton_bw_layout"
+                android:layout_marginEnd="@dimen/marging_from_layout"
+                android:layout_marginStart="@dimen/marging_from_layout"
+                android:drawableBottom="@drawable/login_underline"
+                android:drawablePadding="10sp"
+                android:ems="10"
+                android:hint="Mobile NO."
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColorHint="#8f8f8f"
+                android:textSize="@dimen/textSize"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/continue_app"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <EditText
+                android:id="@+id/status"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_for_all"
+                android:layout_marginBottom="@dimen/margin_botton_bw_layout"
+                android:layout_marginEnd="@dimen/marging_from_layout"
+                android:layout_marginStart="@dimen/marging_from_layout"
+                android:layout_marginTop="8dp"
+                android:drawableBottom="@drawable/login_underline"
+                android:drawablePadding="10sp"
+                android:gravity="center"
+                android:hint="Fill your status"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textColorHint="#8f8f8f"
+                android:textSize="@dimen/editName_textSize"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/mobileno"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/marging_from_layout"
+                android:layout_marginStart="@dimen/marging_from_layout"
+                android:layout_marginTop="26dp"
+                android:drawableBottom="@drawable/login_underline"
+                android:gravity="center"
+                android:maxLines="5"
+                android:padding="10sp"
+                android:text="@string/vendor_proccess_message"
+                android:textColor="@color/black"
+                android:textSize="@dimen/editName_textSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar_log" />
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:paddingRight="15sp"
+            android:paddingLeft="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

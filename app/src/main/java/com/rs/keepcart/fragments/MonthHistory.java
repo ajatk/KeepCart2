@@ -17,12 +17,35 @@ import com.rs.keepcart.R;
 import com.rs.keepcart.databinding.FragmentMonthHistoryBinding;
 import com.rs.keepcart.databinding.NewpaperSalesReportListBinding;
 import com.rs.keepcart.databinding.NewssPaperListBinding;
+import com.rs.keepcart.salesReport.newspaperSales.PendingAmount;
+import com.rs.keepcart.salesReport.newspaperSales.Sale;
+
+import java.util.List;
 
 
 public class MonthHistory extends Fragment {
 
     private FragmentMonthHistoryBinding viewBinding;
     private Context context;
+    private List<Sale> saleMonthList ;
+    private List<PendingAmount> pendingAmountMonthList ;
+
+    public List<Sale> getSaleMonthList() {
+        return saleMonthList;
+    }
+
+    public List<PendingAmount> getPendingAmountMonthList() {
+        return pendingAmountMonthList;
+    }
+
+    public void setSaleMonthList(List<Sale> saleMonthList) {
+        this.saleMonthList = saleMonthList;
+    }
+
+    public void setPendingAmountMonthList(List<PendingAmount> pendingAmountMonthList) {
+        this.pendingAmountMonthList = pendingAmountMonthList;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,13 +53,15 @@ public class MonthHistory extends Fragment {
         viewBinding = DataBindingUtil.bind(view);
         context = getActivity();
         viewBinding.monthListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        viewBinding.monthListRecyclerView.setAdapter(new MonthHistoryAdapter(getActivity()));
+        viewBinding.monthListRecyclerView.setAdapter(new MonthHistoryAdapter(getActivity(), saleMonthList));
         return view;
     }
     public class MonthHistoryAdapter extends RecyclerView.Adapter<MonthHistoryAdapter.ViewHolder>{
         private Context contextt;
-        public MonthHistoryAdapter(FragmentActivity activity) {
+        private List<Sale> saleMonthList;
+        public MonthHistoryAdapter(FragmentActivity activity, List<Sale> saleMonthList) {
             this.contextt = activity;
+            this.saleMonthList = saleMonthList;
         }
 
         @Override
@@ -47,26 +72,29 @@ public class MonthHistory extends Fragment {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, final int position) {
-           /* holder.viewBinding.userNextPage.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(context, "position"+position, Toast.LENGTH_SHORT).show();
-                   *//* if(fragment == null)
-                    {
-                        fragment = new CustomerScreen();
-                        fragLoadMethod(fragment);
-                    } else
-                    {
-                        fragLoadMethod(fragment);
-                    }
-                    fragmentTransaction.addToBackStack(null);*//*
+            try
+            {
+                if(saleMonthList!=null){
+                    holder.viewBinding.totalSale.setText(saleMonthList.get(position).getTotalSale());
+                    holder.viewBinding.amounteRecieve.setText(saleMonthList.get(position).getReceivedAmount());
                 }
-            });*/
+
+            }catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+
         }
 
         @Override
         public int getItemCount() {
-            return 10;
+            if(saleMonthList!=null)
+            {
+                return saleMonthList.size();
+            }else {
+                return 0;
+            }
+
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {

@@ -6,12 +6,14 @@
     <dimen name="margin_from_sides">30dp</dimen>
     <dimen name="height_for_all">75dp</dimen>
     <dimen name="marging_from_layout">30dp</dimen>
+    <dimen name="marging_from_layout1">55dp</dimen>
     <dimen name="textSize">22sp</dimen>
     <dimen name="margin_botton_bw_layout">20dp</dimen>
     <dimen name="signin_bottom_margin">80dp</dimen>
     <dimen name="margin_bottom">35dp</dimen>
+    <dimen name="margin_bottom2">35dp</dimen>
     <dimen name="margin_bottom1">35dp</dimen>
-    <dimen name="logo_height">250dp</dimen>
+    <dimen name="logo_height">350dp</dimen>
     <dimen name="bottom_layout_height">300dp</dimen>
     <dimen name="upper_layout_hight">500dp</dimen>
 
@@ -27,7 +29,7 @@
     <dimen name="margin_top_email_password">40dp</dimen>
     <dimen name="facebook_margin_start">195dp</dimen>
 
-   // home fragment -------------------- ///////////////
+    // home fragment -------------------- ///////////////
     <dimen name="viewpager_Image_size">300dp</dimen>
     <dimen name="home_text_size">30sp</dimen>
     <dimen name="viewpager_height">250dp</dimen>
@@ -41,7 +43,7 @@
     <dimen name="discount_text_size">40sp</dimen>
     <dimen name="discount_content_text_size">20sp</dimen>
     <dimen name="discount_long_text_size">18sp</dimen>
-
+    <dimen name="viewpager_height_in_home">610sp</dimen>
     //// Newspaper fragment -------------------- ///////////////
     <dimen name="sub_container_margin_bottom">30sp</dimen>
     <dimen name="profile_image_height_width">80sp</dimen>
@@ -49,13 +51,14 @@
     <dimen name="profile_name_text_size1">18sp</dimen>
     <dimen name="option_margin_end">30dp</dimen>
     <dimen name="view1_margin_top">45dp</dimen>
-
+    <dimen name="recycle_left_right_button_width">38sp</dimen>
     //// UserList fragment -------------------- ///////////////
     <dimen name="profil_image_margin_top">18dp</dimen>
     <dimen name="month_calculation_price">22sp</dimen>
     <dimen name="month_calculation_price1">28sp</dimen>
     <dimen name="month_calculation_margin_top">18dp</dimen>
     <dimen name="month_calculation_margin_start">30dp</dimen>
+    <dimen name="month_calculation_margin_start1">40dp</dimen>
     <dimen name="magin_ruppee_symbol">423dp</dimen>
     <dimen name="quick_action_text">22sp</dimen>
     <dimen name="view2_margin_top">22dp</dimen>
@@ -66,14 +69,28 @@
     <dimen name="personal_info_margin_top">28dp</dimen>
     <dimen name="name_text_height">60sp</dimen>
 
+    <dimen name="billamount_text_size">28sp</dimen>
+    <dimen name="bill_margin_top">16dp</dimen>
+    <dimen name="bil_margin_right">20dp</dimen>
+    <dimen name="payNow_margin_Top">10dp</dimen>
+    <dimen name="payNow_marginTop">8sp</dimen>
+    <dimen name="paynow_text_size">16sp</dimen>
+    <dimen name="payBoton_height">32sp</dimen>
+    <dimen name="sendNotification_width">150sp</dimen>
+    <dimen name="paybill_width">90sp</dimen>
+    <dimen name="user_Image_width_height">95sp</dimen>
+    <dimen name="image_margin_botoom">10sp</dimen>
+
     <dimen name="editName_textSize">16sp</dimen>
     <dimen name="newspaper_recycler_view_height">220sp</dimen>
     <dimen name="sub_contianer_height">460sp</dimen>
     <dimen name="main_paddin_left_right">15sp</dimen>
     <dimen name="status_list1_text_size">22sp</dimen>
+
+
     //// NewsPaperList fragment -------------------- ///////////////
 
-    <dimen name="newsPaper_imageWidth">55sp</dimen>
+    <dimen name="newsPaper_imageWidth">85sp</dimen>
     <dimen name="newsPaper_imageWidth1">135sp</dimen>
 
     //// CustomerScreen fragment -------------------- ///////////////
@@ -82,6 +99,7 @@
     //// Magazine_list_design -------------------- ///////////////
     <dimen name="fav_height_width">50sp</dimen>
     <dimen name="magazine_image_width">250sp</dimen>
+    <dimen name="magazine_image_width1">150sp</dimen>
     <dimen name="magazine_image_height">170sp</dimen>
     <dimen name="magazine_text_size">28sp</dimen>
     <dimen name="magazine_user_text_size">22sp</dimen>
@@ -93,15 +111,60 @@
     <dimen name="userImage_width">55sp</dimen>
     <dimen name="margin_image_start">36dp</dimen>
     <dimen name="margin_top">16dp</dimen>
+
     <dimen name="newspaper_title_text_size">28sp</dimen>
     <dimen name="total_sale_text_size">16sp</dimen>
     <dimen name="total_sale_text_size1">16sp</dimen>
     <dimen name="wallet_expandableList_height">700sp</dimen>
-    <dimen name="header_constarint_height">350sp</dimen>
-    <dimen name="profile_Image_margin_top">106dp</dimen>
-    <dimen name="profile_name_text_size_wallet">28sp</dimen>
-    <dimen name="checkBox_height">35sp</dimen>
+    <dimen name="header_constarint_height">270sp</dimen>
+
+    //// Profile fragment -------------------- ///////////////
+    <dimen name="profile_Image_margin_top">70dp</dimen>
+    <dimen name="profile_name_text_size_wallet">22sp</dimen>
+    <dimen name="checkBox_height">45sp</dimen>
     <dimen name="change_image_width_height">30sp</dimen>
     <dimen name="margin_left_changeImage">140dp</dimen>
+
+    //// UserHome fragment -------------------- ///////////////
+    <dimen name="dots_margin_user_dashBoard">220dp</dimen>
+    <dimen name="home_tabLayout_height">50sp</dimen>
+
+    //// Magazine List fragment -------------------- ///////////////
+    <dimen name="recycler_view_height_magazin_list">740sp</dimen>
+    <dimen name="text_size_name">14sp</dimen>
+    <dimen name="frameLayout_height">519dp</dimen>
+    <dimen name="constarintLayout_subContainer_margintop">61dp</dimen>
+
+    /// ToolBars ===================//////////////////////////
+
+    <dimen name="toolbar_height">70dp</dimen>
+    <dimen name="edittext_layout_width">330dp</dimen>
+    <dimen name="edittext_layout_height">70dp</dimen>
+    <dimen name="cart_icon_width">70dp</dimen>
+    <dimen name="cart_icon_height">70sp</dimen>
+    <dimen name="location_text_size">28sp</dimen>
+    <dimen name="pading_top_toolbar_tilte">12sp</dimen>
+    <dimen name="cart_count_margin_bottom">18dp</dimen>
+    <dimen name="cartcount_height_width">18sp</dimen>
+    <dimen name="margin_right_notificationCount">19dp</dimen>
+    <dimen name="margin_botom_notificationCount">19dp</dimen>
+    <dimen name="text_Count_marginRight">19dp</dimen>
+    <dimen name="notification_count_text_sixe">12sp</dimen>
+    /// SelectNewspaper List vendor ===================//////////////////////////
+    <dimen name="margin_start">86dp</dimen>
+    <dimen name="newspaper_text_size">22sp</dimen>
+    <dimen name="recycle_left_right_button_heigth">38sp</dimen>
+    <dimen name="dueBill_Amount_margin_right">30dp</dimen>
+    <dimen name="padding_for_quick_action_items_padding">8sp</dimen>
+
+    /////////// About Us ---------------------------------//////
+
+    <dimen name="progress_bar_width">75dp</dimen>
+    <dimen name="progress_bar_height">75dp</dimen>
+    <dimen name="address_keepcart">250sp</dimen>
+    <dimen name="expandableListPreferredChildPaddingLeft">10sp</dimen>
+    <dimen name="text_size_wallet">14sp</dimen>
+    <dimen name="guideline_edit_profile">257dp</dimen>
+    <dimen name="margin_top_container_layout">20sp</dimen>
 
 </resources>

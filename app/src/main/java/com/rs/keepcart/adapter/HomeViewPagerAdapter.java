@@ -4,9 +4,9 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 
-import com.rs.keepcart.fragments.NewsPaper;
-import com.rs.keepcart.login.SignIn;
+import com.rs.keepcart.dashboard.dashBoardModel.VendorDetail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,46 +16,41 @@ import java.util.List;
  */
 
 public class HomeViewPagerAdapter extends FragmentStatePagerAdapter {
-    private final List<Fragment> mFragmentList = new ArrayList<>();
-    private final List<String> mFragmentTitleList = new ArrayList<>();
+    private  ArrayList<Fragment> mFragmentList = new ArrayList<>();
     String a[] = {"NewsPaper", "Shopping ","Services" };
     public Context context;
 
-    public HomeViewPagerAdapter(FragmentManager fm) {
-        super(fm);
-    }
+    private List<VendorDetail> vendorList;
 
-    public HomeViewPagerAdapter(Context context, FragmentManager fm) {
+    public HomeViewPagerAdapter(ViewPager viewPager, Context context, FragmentManager fm, List<VendorDetail> vendor_List, int tabCount, ArrayList<Fragment> mFragmentList) {
         super(fm);
         this.context = context;
-
+        this.vendorList = vendor_List;
+        this.mFragmentList = mFragmentList;
+        viewPager.setOffscreenPageLimit(3);
     }
 
-    public HomeViewPagerAdapter(Context context, FragmentManager fm, int tabCount) {
-        super(fm);
-        this.context = context;
-
-    }
 
     @Override
     public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+//        if (position == 0) {
+//            NewsPaper newsPaper = new NewsPaper();
+//           //    newsPaper.setVendorList(vendorList);
+//            return newsPaper;
+//        }  else if (position ==1){
+//
+//            return new ComingSoonFragment();
+//        }
+//        else{
+//            return new ComingSoonFragment();
+//        }
 
-
-        if (position == 0) {
-
-            return new NewsPaper();
-        }  else if (position ==1){
-
-            return new SignIn();
-        }
-        else{
-            return new NewsPaper();
-        }
     }
-     public void addFragment(Fragment fragment, String title)
+     public void addFragment(Fragment fragment)
      {
          mFragmentList.add(fragment);
-         mFragmentTitleList.add(title);
+
       }
     @Override
     public int getCount() { return 3; }

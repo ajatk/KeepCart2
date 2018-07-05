@@ -3,31 +3,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.rs.unnatBharat.fragments.Dashboard">
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constarintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="@dimen/main_paddin_left_right"
-        android:paddingRight="@dimen/main_paddin_left_right">
-       
-        <android.support.design.widget.TabLayout
-            android:id="@+id/user_tabLayout"
+        android:layout_height="wrap_content">
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabGravity="fill"
-            app:tabSelectedTextColor="@color/Redd"
-            app:tabTextColor="@color/black"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <include
+                layout="@layout/inner_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constarintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/constarintLayout_subContainer_margintop"
+            android:paddingLeft="@dimen/main_paddin_left_right"
+            android:paddingRight="@dimen/main_paddin_left_right"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constarintLayout"/>
-         <android.support.v4.view.ViewPager
-             android:id="@+id/user_viewPager"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             app:layout_constraintEnd_toEndOf="parent"
-             app:layout_constraintHorizontal_bias="0.0"
-             app:layout_constraintStart_toStartOf="parent"
-             app:layout_constraintTop_toBottomOf="@+id/user_tabLayout"/>
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/user_tabLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.1dp"
+                android:fitsSystemWindows="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabGravity="fill"
+                app:tabSelectedTextColor="@color/Redd"
+                app:tabTextColor="@color/black" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/user_viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_tabLayout" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:paddingBottom="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+                <FrameLayout
+                    android:id="@+id/frame1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="50sp"
+                    />
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progressBar_log"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:theme="@style/AppTheme"
+            android:visibility="gone"
+            android:backgroundTint="@color/Redd"
+            android:progressBackgroundTint="@color/Redd"
+            android:progressTint="@color/Redd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.422" />
+
     </android.support.constraint.ConstraintLayout>
 
 </layout>

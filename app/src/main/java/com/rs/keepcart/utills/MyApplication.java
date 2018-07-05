@@ -6,13 +6,15 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatDelegate;
 
+import com.rs.keepcart.connectivity.ConnectivityReceiver;
+
 
 /**
  * Created by Ragasoft on 4/10/2017.
  */
 
 public class MyApplication extends Application {
-
+    private static MyApplication mInstance;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -23,6 +25,8 @@ public class MyApplication extends Application {
         }
         LeakCanary.install(this);
         // Normal app init code...*/
+
+        mInstance = this;
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         initializeSharedPreference();
@@ -45,4 +49,12 @@ public class MyApplication extends Application {
     }
 
 
+
+
+    public static synchronized MyApplication getInstance() {
+        return mInstance;
+    }
+    public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
+        ConnectivityReceiver.connectivityReceiverListener = listener;
+    }
 }

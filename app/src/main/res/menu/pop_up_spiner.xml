@@ -5,10 +5,11 @@
 
 
     <item
+        android:id="@+id/vendor"
+        android:title="Vendor" />
 
-        android:title="Vender" />
     <item
-
+        android:id="@+id/user"
         android:title="User" />
 
 </menu>

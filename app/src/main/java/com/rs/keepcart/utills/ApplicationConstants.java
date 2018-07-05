@@ -17,9 +17,10 @@ public class ApplicationConstants {
     public static final int LOADING = -2000;
     public static final int SHOW_ONLY_MSG = -4000;
     public static final int GENERAL_ERROR = -4001;
+    //public static final int SET_Message = -4002;
 
 
-    public static final String MESSAGE_PERMISSION = "Please grant the UnnatBharat app Location permission from the App Settings to run seamlessly";
+    public static final String MESSAGE_PERMISSION = "Please grant the KeepKart app Location permission from the App Settings to run seamlessly";
     public static final String BAD_INTERNET_ERR = "Sorry, Bad Internet Connection";
     public static final String NO_INTERNET_ERR = "Sorry, Internet Is Not Available";
     public static final String ERROR_MSG = "Error occured. Please Try Again";
@@ -27,6 +28,7 @@ public class ApplicationConstants {
     public static final String PhoneNos = "PhoneNos";
     public static final String Names = "Names";
     public static final String userId = "userId";
+    public static final String SET_Message = "Please Select NewsPaper First";
 
 
 

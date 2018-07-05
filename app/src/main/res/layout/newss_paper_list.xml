@@ -13,21 +13,19 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/user_image"
+            android:id="@+id/newsPaper_image"
             android:layout_width="@dimen/newsPaper_imageWidth"
             android:layout_height="@dimen/newsPaper_imageWidth"
             android:layout_marginBottom="18dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:clickable="false"
-            android:src="@drawable/profile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/background_log" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/user_name"
+            android:id="@+id/newsPaper_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -36,7 +34,7 @@
             android:textSize="16sp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/user_image"
+            app:layout_constraintStart_toEndOf="@+id/newsPaper_image"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -47,8 +45,8 @@
             android:text="No of Customer"
             android:textSize="14sp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/user_name"
-            app:layout_constraintTop_toBottomOf="@+id/user_name" />
+            app:layout_constraintStart_toStartOf="@+id/newsPaper_name"
+            app:layout_constraintTop_toBottomOf="@+id/newsPaper_name" />
 
         <TextView
             android:id="@+id/no_customers"
@@ -80,7 +78,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/button_background"
             android:gravity="center"
             android:padding="2sp"
             android:drawableRight="@drawable/arrow_right"
@@ -88,7 +85,8 @@
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="16dp" />
     </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 </layout>
