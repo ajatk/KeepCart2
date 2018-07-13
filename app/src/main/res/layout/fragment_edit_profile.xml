@@ -63,7 +63,7 @@
                     android:layout_width="@dimen/change_image_width_height"
                     android:layout_height="@dimen/change_image_width_height"
                     android:layout_marginStart="@dimen/margin_left_changeImage"
-                    android:background="#8db1f2"
+                    android:background="@color/change_image_backgroundColor"
                     android:padding="8sp"
                     android:src="@drawable/ic_camera_icon"
                     app:layout_constraintBottom_toTopOf="@+id/editProfile"
@@ -248,7 +248,7 @@
                     android:layout_marginRight="@dimen/marging_from_layout"
                     android:layout_marginTop="8dp"
                     android:drawableBottom="@drawable/login_underline"
-                    android:drawableRight="@drawable/dropdown"
+
                     android:drawablePadding="10sp"
                     android:ems="10"
                     android:maxLines="1"
@@ -293,7 +293,7 @@
                     android:layout_marginEnd="@dimen/marging_from_layout"
                     android:drawableBottom="@drawable/login_underline"
                     android:drawablePadding="10sp"
-                    android:drawableRight="@drawable/arrow_dropdown"
+
                     android:ems="10"
                     android:hint="Sector"
                     android:inputType="textPersonName"

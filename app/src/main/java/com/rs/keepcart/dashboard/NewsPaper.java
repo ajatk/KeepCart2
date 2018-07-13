@@ -24,12 +24,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.rs.keepcart.R;
 import com.rs.keepcart.adapter.TotalBillsRecyclerAdapter;
-import com.rs.keepcart.comingSoon.ComingSoonFragment;
 import com.rs.keepcart.connectivity.NoInternetConection;
 import com.rs.keepcart.dashboard.dashBoardModel.VendorDetail;
 import com.rs.keepcart.dashboard.dashBoardModel.VendorPreviou;
 import com.rs.keepcart.databinding.FragmentNewsPaperBinding;
 import com.rs.keepcart.editProfile.EditProfile;
+import com.rs.keepcart.userPart_appUserScreens.userDashBoard.UserHomeActivity;
 import com.rs.keepcart.utills.MySharedData;
 import com.rs.keepcart.wallet.VendorWalletActivity;
 import com.rs.keepcart.magazines.ActivityMagazines;
@@ -39,18 +39,16 @@ import com.rs.keepcart.newsPaperList.NewsPaperList;
 import com.rs.keepcart.newsPaperList.NewsPaperListActivity;
 import com.rs.keepcart.salesReport.SalesReportFragment;
 import com.rs.keepcart.salesReport.SalesReportActivity;
-import com.rs.keepcart.userlist.UserDetail;
-import com.rs.keepcart.userlist.UserList;
+import com.rs.keepcart.vendorUserList.UserDetail;
+import com.rs.keepcart.vendorUserList.UserList;
 
-import com.rs.keepcart.userlist.UserListActivity;
-import com.rs.keepcart.userlist.UserViewModelClass;
+import com.rs.keepcart.vendorUserList.UserListActivity;
+
 import com.rs.keepcart.connectivity.ConnectivityReceiver;
 import com.rs.keepcart.utills.MyApplication;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.rs.keepcart.editProfile.EditProfile.Base_URL;
 
 
 public class NewsPaper extends Fragment implements View.OnClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
@@ -58,7 +56,7 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
    private FragmentNewsPaperBinding viewBinding;
    private EditProfile editProfile;
    private Fragment fragment=null;
-
+    String image;
    private UserList userList;
    private NewsPaperList newsPaperList;
    private Magazines magazines;
@@ -67,7 +65,7 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
    private Context context;
     private SetNewspaperInfoModelClass infoClass;
     private List<UserDetail> userDetail;
-    private UserViewModelClass viewModel;
+
     public static final String Base_URL = "http://www.uicreations.com/keepkart/assets/images/";
     List<String> itemName;
     int[] itemImag;
@@ -113,7 +111,7 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
         context = getActivity();
         totalBills = view.findViewById(R.id.totalBillsTv);
         inItList();
-        String image = MySharedData.getGeneralSaveSession("image_saved");
+         image = MySharedData.getGeneralSaveSession("image_saved");
 
         Glide.with(context).load(Base_URL + image )
                 .error(R.drawable.banner)
@@ -136,7 +134,13 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
              else {
 
                 viewBinding.vendorNameId.setText(vendorList.get(i).getName() + " "+ vendorList.get(i).getVendorId());
-                 viewBinding.dueBillAmountTv.setText( vendorList.get(i).getDueAmounts().getDueAmount());
+                if(vendorList.get(i).getDueAmounts().getDueAmount()==null)
+                {
+                    viewBinding.dueBillAmountTv.setText("0");
+                }else
+                {
+                    viewBinding.dueBillAmountTv.setText( vendorList.get(i).getDueAmounts().getDueAmount());
+                }
             }
 
 
@@ -165,7 +169,8 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
     }
     public void inItList()
     {   itemName = new ArrayList<>();
-        itemImag = new int[]{R.drawable.black_male,R.drawable.newspaper, R.drawable.offers__icon, R.drawable.magazine,R.drawable.sales_report, R.drawable.wallet_filled};
+        itemImag = new int[]{R.drawable.black_male,R.drawable.newspaper, R.drawable.offers__icon,
+                R.drawable.magazine,R.drawable.sales_report, R.drawable.wallet_filled};
 
         itemName.add("User");
         itemName.add("NewsPaper List");
@@ -183,6 +188,8 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
         {
             case R.id.imageOption:
                // popupOption.show();
+                Intent intentUser = new Intent(context, UserHomeActivity.class);
+                context.startActivity(intentUser);
                 break;
             case R.id.profileImage:
                 if(fragment == null)
@@ -323,7 +330,9 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
     @Override
     public void onResume() {
         super.onResume();
-
+//        Glide.with(context).load(Base_URL + image )
+//                .error(R.drawable.banner)
+//                .into(viewBinding.profileImage);
         MyApplication.getInstance().setConnectivityListener((ConnectivityReceiver.ConnectivityReceiverListener) this);
 
     }

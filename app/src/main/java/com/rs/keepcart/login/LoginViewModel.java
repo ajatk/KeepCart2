@@ -61,7 +61,7 @@ public class LoginViewModel extends ViewModel {
 
 
         MySharedData.setGeneralSaveSession("pass",loginInfoModel.getPassword());
-        MySharedData.setGeneralSaveSession("vender_email",loginInfoModel.getVendor_Email());
+        MySharedData.setGeneralSaveSession("vender_Email",loginInfoModel.getVendor_Email());
 
     }
 }

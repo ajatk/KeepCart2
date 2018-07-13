@@ -1,10 +1,10 @@
 package com.rs.keepcart.editProfile;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,10 +12,10 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -55,9 +55,6 @@ import com.rs.keepcart.utills.MySharedData;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -101,7 +98,7 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
     private CityAndBankModelClass bankModelClass;
     private String imageUri = null;
     private String email_, name_, mobileNo_, address_, accountNo_, ifscCode_, sector_, panCard,
-            adharCard, pinCode_, bankkName, cityName, bankN, cityN, imageNameSaved;
+            adharCard, pinCode_, bankkName, cityName, bankN, cityN, imageNameSaved, image;
     private String email_S, name_S, mobileNo_S, address_S, accountNo_S,
             ifscCode_S, sector_S, panCard_S, adharCard_S, pinCode_S, bankkName_S, cityName_S;
     private Spinner bankname;
@@ -116,7 +113,7 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
         titleSet.setText("Profile");
         navView = ((HomeActivity) getActivity()).findViewById(R.id.nav_view);
         setProfilData();
-        String image = MySharedData.getGeneralSaveSession("image_saved");
+        image = MySharedData.getGeneralSaveSession("image_saved");
 
         Glide.with(context).load(Base_URL + image)
                 .error(R.drawable.banner)
@@ -132,8 +129,6 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
         //signUpMethod();
 
         return view;
-
-
     }
 
     public void cityAndBankList() {
@@ -311,13 +306,29 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
                 break;
         }
     }
-
+private int count =0;
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.edit_profileText:
-                viewModelClass = ViewModelProviders.of(this).get(EditprofileViewModelClass.class);
-                viewModelClass.loginLiveData.observe(this, this::signUpResponse);
+                count++;
+                if(count==1)
+                {
+                    count++;
+                    viewBinding.editProfileText.setBackgroundColor(R.color.gray_set);
+                    viewBinding.city.setText("");
+                    viewBinding.bank.setText("");
+                    viewBinding.citySpinner.setVisibility(View.VISIBLE);
+                    viewBinding.bankNameSpinner.setVisibility(View.VISIBLE);
+                    viewModelClass = ViewModelProviders.of(this).get(EditprofileViewModelClass.class);
+                    viewModelClass.loginLiveData.observe(this, this::signUpResponse);
+                } else if(count>1){
+                    viewBinding.editProfileText.setBackgroundColor(Color.TRANSPARENT);
+                    count=0;
+
+                }
+
 //                BottomSheetDialogFragment bottomSheetDialogFragment = new BottomFragment();
 //                bottomSheetDialogFragment.show(getActivity().getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
                 break;
@@ -418,6 +429,7 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
             if (resultCode == RESULT_OK && data != null) {
                 if (requestCode == 12) {
                     onSelectFromGalleryResult(data);
+
                     uploadImage();
                 } else if  (requestCode == 11 ) {
                     onCaptureImageResult(data);
@@ -434,7 +446,9 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
     @SuppressWarnings("deprecation")
     private void onSelectFromGalleryResult(Intent data) {
         uri = data.getData();
+       // uri = CropImage.getPickImageResultUri(context,data);
         imageUri = getRealPathFromURI(uri);
+
         imageUri = Objects.requireNonNull(uri).toString();
         Log.e("IMage uri" + uri, "xjdkgh");
         imageUri = ApplicationUtils.getFilePathFromURI(getActivity(), data.getData());
@@ -451,6 +465,7 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
         Bitmap vendorimage = (Bitmap) Objects.requireNonNull(data.getExtras()).get("data");
        // user_image.setImageBitmap(vendorimage);
         Log.e("IMage uri" + vendorimage, "x,jdkgh");
+        //uri = CropImage.getPickImageResultUri(context,data);
         imageUri = getRealPathFromURI(getImageUri(context, vendorimage));
         Log.e("IMage uri" + vendorimage, "x,jdkgh");
         uri = getImageUri(context, vendorimage);
@@ -520,7 +535,6 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
                     EditProfileImageModelClass responseBody = response.body();
                     if (response.isSuccessful() ) {
 
-
                         if(response.body().getStatus()!=null)
                         {
                             if (response.body().getStatus() == 200) {
@@ -565,9 +579,9 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
 
                     if (response.body().getStatus() != null) {
                         if (response.body().getStatus() == 200) {
-
-//                            viewBinding.citySpinner.setVisibility(View.GONE);
-//                            viewBinding.bankNameSpinner.setVisibility(View.GONE);
+                            //viewBinding.editName.ed
+                            viewBinding.citySpinner.setVisibility(View.GONE);
+                            viewBinding.bankNameSpinner.setVisibility(View.GONE);
                             name_S = MySharedData.getGeneralSaveSession("name_p");
                             viewBinding.editName.setText(responseBody.getProfile().getName());
                             viewBinding.editAcountNo.setText(responseBody.getProfile().getAccountNo());
@@ -579,9 +593,11 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
                             viewBinding.editTextPincode.setText((CharSequence) responseBody.getProfile().getPincode());
                             viewBinding.panCard.setText(responseBody.getProfile().getPanCard());
                             //viewBinding.citySpinner.getSelectedItem();
-                            viewBinding.citySpinner.setPrompt(responseBody.getProfile().getCity());
-                            viewBinding.bankNameSpinner.setPrompt(responseBody.getProfile().getCity());
-                           // viewBinding.bank.setText(responseBody.getProfile().getBankName());
+                            viewBinding.city.setText(responseBody.getProfile().getCity());
+//                            viewBinding.citySpinner.setPrompt(responseBody.getProfile().getCity());
+//                            viewBinding.bankNameSpinner.setPrompt(responseBody.getProfile().getCity());
+                             viewBinding.bank.setText(responseBody.getProfile().getBankName());
+
                             // Toast.makeText(context, "response 200", Toast.LENGTH_SHORT).show();
                             //Snackbar.make(titleSet, responseBody.getProfile().getm,Snackbar.LENGTH_SHORT).show();
                         }
@@ -633,6 +649,14 @@ public class EditProfile extends Fragment implements View.OnClickListener, Adapt
                 return true;
             }
         }
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        Glide.with(context).load(Base_URL + image)
+                .error(R.drawable.banner)
+                .into(viewBinding.profileImageView);
+
     }
 
 }

@@ -1,6 +1,5 @@
 package com.rs.keepcart.dashboard;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -21,34 +20,38 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.paytm.pgsdk.Log;
 import com.rs.keepcart.R;
 import com.rs.keepcart.connectivity.NoInternetConection;
 import com.rs.keepcart.databinding.ActivityHomePageBinding;
 import com.rs.keepcart.editProfile.EditProfile;
-import com.rs.keepcart.editProfile.EditprofileViewModelClass;
-import com.rs.keepcart.editProfile.profileModel.EditProfileModelClass;
 import com.rs.keepcart.editProfile.profileModel.GetDataProfileModelClass;
 import com.rs.keepcart.fragments.Aboutusfragment;
 import com.rs.keepcart.fragments.RequestToShift;
 import com.rs.keepcart.login.LoginActivity;
-import com.rs.keepcart.login.SignIn;
-import com.rs.keepcart.retrofit.Resource;
+import com.rs.keepcart.retrofit.ApiClient;
+import com.rs.keepcart.retrofit.ApiInterface;
 import com.rs.keepcart.salesReport.SalesReportActivity;
 import com.rs.keepcart.session.SessionManager;
 import com.rs.keepcart.connectivity.ConnectivityReceiver;
-import com.rs.keepcart.utills.ApplicationConstants;
 import com.rs.keepcart.utills.MyApplication;
 import com.rs.keepcart.utills.MySharedData;
 import com.rs.keepcart.wallet.VendorWalletActivity;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+
 import static com.rs.keepcart.editProfile.EditProfile.Base_URL;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,ConnectivityReceiver.ConnectivityReceiverListener {
+    public static final String TAG = HomeActivity.class.getSimpleName();
     public static int navItemIndex = 0;
     NavigationView navigationView;
     SessionManager session;
+    String image_saved, Vendor_name,email_dash, imgg;
     private FragmentTransaction fragmentTransaction;
     private Fragment fragment;
     private HomeFragment homeFragment;
@@ -71,7 +74,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mActionBar = getSupportActionBar();
-
+       // image_saved = MySharedData.getGeneralSaveSession("imgg");
+        image_saved = MySharedData.getGeneralSaveSession("image_saved");
+        Vendor_name = MySharedData.getGeneralSaveSession("Vendor_name");
+         email_dash = MySharedData.getGeneralSaveSession("email_dash");
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(
                 this, mDrawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -86,17 +92,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         name = view.findViewById(R.id.id_name);
         email = view.findViewById(R.id.id_email);
 
-        String image_saved = MySharedData.getGeneralSaveSession("image_saved");
-        String Vendor_name = MySharedData.getGeneralSaveSession("Vendor_name");
-        String email_dash = MySharedData.getGeneralSaveSession("email_dash");
         Glide.with(context).load(Base_URL + image_saved )
                 .error(R.drawable.banner)
                 .into(headerImg);
 
         name.setText(Vendor_name);
         email.setText(email_dash);
-
-        String image = MySharedData.getGeneralSaveSession("image_saved");
 
         toolbar.setNavigationIcon(R.drawable.tool_bar);
         if (savedInstanceState != null) {
@@ -107,19 +108,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         fragment = new HomeFragment();
         loadFragment(fragment);
     }
-
-    @Override
-    public void onBackPressed() {
-        if (mDrawer.isDrawerOpen(GravityCompat.START)) {
-            mDrawer.closeDrawer(GravityCompat.START);
-
-        } else if (getFragmentManager().getBackStackEntryCount() > 0)
-            getFragmentManager().popBackStack();
-        else {
-            super.onBackPressed();
-        }
-    }
-
 
     public void loadFragment(Fragment fragment) {
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -179,7 +167,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
        /* public void onResume() { wasShaken = false; }*/
         if (fragment != null) {
             loadFragment(fragment);
-            fragmentTransaction.addToBackStack(fragment.getClass().getName());
+           // fragmentTransaction.addToBackStack(fragment.getClass().getName());
+            //fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -202,7 +191,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onResume();
         pass = false;
         MyApplication.getInstance().setConnectivityListener((ConnectivityReceiver.ConnectivityReceiverListener) this);
+        Glide.with(context).load(Base_URL + image_saved )
+                .error(R.drawable.banner)
+                .into(headerImg);
+        setProfilData();
     }
+    @Override
+    public void onBackPressed() {
+        if (mDrawer.isDrawerOpen(GravityCompat.START)) {
+            mDrawer.closeDrawer(GravityCompat.START);
+
+        }/* else if (getFragmentManager().getBackStackEntryCount() > 0)
+            getFragmentManager().popBackStack();*/
+        else {
+            Intent mainActivity = new Intent(Intent.ACTION_MAIN);
+            mainActivity.addCategory(Intent.CATEGORY_HOME);
+            mainActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(mainActivity);
+        }
+    }
+
     @Override
     public void onNetworkConnectionChanged(boolean isConnected) {
         showSnack(isConnected);
@@ -228,7 +236,44 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    public void setProfilData() {
+        String id_ = MySharedData.getGeneralSaveSession("userId");
+        ApiInterface retrofitInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<GetDataProfileModelClass> call = retrofitInterface.getProfileData(id_);
+        // viewBinding.progressBarLog.setVisibility(View.VISIBLE);
+        call.enqueue(new Callback<GetDataProfileModelClass>() {
+            @Override
+            public void onResponse(Call<GetDataProfileModelClass> call, retrofit2.Response<GetDataProfileModelClass> response) {
 
+                // mProgressBar.setVisibility(View.GONE);
+                GetDataProfileModelClass responseBody = response.body();
+
+                if (response.isSuccessful()) {
+
+                    if (response.body().getStatus() != null) {
+                        if (response.body().getStatus() == 200) {
+                            //viewBinding.editName.ed
+
+                            MySharedData.setGeneralSaveSession("imgg",responseBody.getProfile().getImage().toString());
+
+                            // Toast.makeText(context, "response 200", Toast.LENGTH_SHORT).show();
+                            //Snackbar.make(titleSet, responseBody.getProfile().getm,Snackbar.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(context, "response Status is not 200", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<GetDataProfileModelClass> call, Throwable t) {
+
+
+                Log.d(TAG, "onFailure: " + t.getLocalizedMessage());
+            }
+        });
+    }
 }
 
 

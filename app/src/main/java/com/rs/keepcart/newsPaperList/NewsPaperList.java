@@ -1,42 +1,20 @@
 package com.rs.keepcart.newsPaperList;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.rs.keepcart.R;
-import com.rs.keepcart.dashboard.HomeActivity;
 import com.rs.keepcart.databinding.FragmentNewsPaperListBinding;
-import com.rs.keepcart.databinding.NewssPaperListBinding;
-import com.rs.keepcart.fragments.CustomerScreen;
-import com.rs.keepcart.retrofit.ApiClient;
-import com.rs.keepcart.retrofit.ApiInterface;
-import com.rs.keepcart.retrofit.Resource;
-import com.rs.keepcart.utills.ApplicationConstants;
-import com.rs.keepcart.utills.MySharedData;
-import com.rs.keepcart.utills.RecyclerTouchListner;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class NewsPaperList extends Fragment {

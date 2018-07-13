@@ -31,7 +31,7 @@
     <item
         android:id="@+id/plans_pack"
         android:icon="@drawable/active_plan_and_packs"
-        android:title="offers" />
+        android:title="Offers" />
     <item
         android:id="@+id/request_shift"
         android:icon="@drawable/request_to_shift"
@@ -43,7 +43,7 @@
     <item
         android:id="@+id/vender_sales"
         android:icon="@drawable/vendor_sales_and_report"
-        android:title="Vender Sales &amp; Report" />
+        android:title="Vendor Sales &amp; Report" />
      <item
         android:id="@+id/aboutusTxt"
         android:icon="@drawable/locks"

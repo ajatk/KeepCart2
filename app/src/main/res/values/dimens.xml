@@ -5,7 +5,7 @@
 
 
     <dimen name="layout_height">430dp</dimen>
-    <dimen name="margin_from_sides">10dp</dimen>
+    <dimen name="margin_from_sides">20dp</dimen>
     <dimen name="height_for_all">55dp</dimen>
     <dimen name="marging_from_layout">20dp</dimen>
     <dimen name="marging_from_layout1">45dp</dimen>
@@ -45,7 +45,7 @@
 
     <dimen name="viewpager_Image_size">200dp</dimen>
     <dimen name="home_text_size">20sp</dimen>
-    <dimen name="viewpager_height">170dp</dimen>
+    <dimen name="viewpager_height">185dp</dimen>
     <dimen name="dots_layout_height">30dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">32dp</dimen>
@@ -98,6 +98,7 @@
     <dimen name="status_list1_text_size">16sp</dimen>
     <dimen name="billamount_text_size">18sp</dimen>
     <dimen name="bill_margin_top">16dp</dimen>
+    <dimen name="bill_margin_top1">20dp</dimen>
     <dimen name="bil_margin_right">16dp</dimen>
     <dimen name="payNow_margin_Top">32dp</dimen>
     <dimen name="payNow_marginTop">8sp</dimen>
@@ -178,4 +179,8 @@
     <dimen name="text_size_wallet">14sp</dimen>
     <dimen name="guideline_edit_profile">157dp</dimen>
     <dimen name="margin_top_container_layout">0sp</dimen>
+    <dimen name="billamount_paid_text_size">14sp</dimen>
+    /// fragment User-Home ................../
+    <dimen name="view_pager_height_2">500sp</dimen>
+
 </resources>

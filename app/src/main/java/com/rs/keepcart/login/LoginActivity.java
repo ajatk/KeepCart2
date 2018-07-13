@@ -10,7 +10,6 @@ import android.view.View;
 import com.rs.keepcart.R;
 import com.rs.keepcart.adapter.LoginViewPagerAdapter;
 import com.rs.keepcart.databinding.ActivityLoginBinding;
-import com.rs.keepcart.utills.MySharedData;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -62,5 +61,8 @@ public class LoginActivity extends AppCompatActivity {
         viewBinding.viewPagerTest.setCurrentItem(0);
 
     }
+    public void onBackPressed() {
+        finish();
+    }
 
-}
+    }

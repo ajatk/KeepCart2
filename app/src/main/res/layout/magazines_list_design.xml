@@ -52,7 +52,7 @@
                android:layout_marginLeft="4dp" />
 
             <TextView
-                android:id="@+id/noOfUsers"
+                android:id="@+id/noOfUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
@@ -63,47 +63,48 @@
                 app:layout_constraintTop_toBottomOf="@+id/magazineName" />
 
            <TextView
-               android:id="@+id/no_0fUsers"
+               android:id="@+id/no_OfUsers"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_marginStart="4dp"
+               android:layout_marginStart="6dp"
                android:text="(500)"
                android:textColor="@color/black"
                android:textSize="@dimen/magazine_user_text_size"
-               app:layout_constraintBaseline_toBaselineOf="@+id/noOfUsers"
-               app:layout_constraintStart_toEndOf="@+id/noOfUsers"
-               android:layout_marginLeft="4dp" />
+               app:layout_constraintBaseline_toBaselineOf="@+id/noOfUser"
+               app:layout_constraintStart_toEndOf="@+id/noOfUser"
+               android:layout_marginLeft="6dp" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="No of Users"
-                android:numStars="5"
-                android:progressBackgroundTint="@color/Redd"
-                android:backgroundTint="@color/Redd"
-                android:rating="3.5"
-                style="@style/Base.Widget.AppCompat.RatingBar.Small"
-                android:stepSize="0.1"
-                app:layout_constraintStart_toStartOf="@+id/noOfUsers"
-                app:layout_constraintTop_toBottomOf="@+id/noOfUsers" />
+           <RatingBar
+               android:id="@+id/ratingBar"
+               style="@style/Base.Widget.AppCompat.RatingBar.Small"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="2dp"
+               android:backgroundTint="@color/Redd"
+               android:numStars="5"
+               android:progressBackgroundTint="@color/Redd"
+               android:rating="3.5"
+               android:stepSize="0.1"
+               android:text="No of Users"
+               app:layout_constraintStart_toStartOf="@+id/magazineName"
+               app:layout_constraintTop_toBottomOf="@+id/noOfUser" />
+<!--android:padding="@dimen/paddigng_ratting_text" below ratin tv-->
+           <TextView
+               android:id="@+id/rating_tv"
+               android:layout_width="wrap_content"
+               android:layout_height="@dimen/ratting_height"
+               android:layout_marginStart="14dp"
 
-            <TextView
-                android:id="@+id/areas"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/ratting_height"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="@dimen/rattingText_margin_top"
-                android:background="@drawable/button_background"
-                android:padding="@dimen/paddigng_ratting_text"
-                android:text="3.5/5"
-                android:gravity="center"
-                android:textColor="@color/white"
-                android:textSize="@dimen/rating_text_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/ratingBar"
-                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+               android:layout_marginTop="24dp"
+               android:background="@drawable/button_background"
+               android:gravity="center"
+               android:paddingLeft="10sp"
+               android:paddingRight="10sp"
+               android:textColor="@color/white"
+               android:textSize="@dimen/rating_text_size"
+               app:layout_constraintStart_toEndOf="@+id/magazine_image"
+               app:layout_constraintTop_toBottomOf="@+id/noOfUser"
+               android:layout_marginLeft="14dp" />
 
            <ImageView
                android:id="@+id/user_notification"

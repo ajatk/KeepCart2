@@ -55,14 +55,17 @@ public class SignIn extends Fragment implements View.OnClickListener {
             if (newsPerSelected != null) {
                 Intent intent = new Intent(getActivity(), HomeActivity.class);
                 startActivity(intent);
+
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     getActivity().finishAffinity();
+                    getActivity().finish();
                 }
             } else {
                 Intent intentNews = new Intent(getActivity(), SelectNewsPaperActivity.class);
                 startActivity(intentNews);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     getActivity().finishAffinity();
+                    getActivity().finish();
                 }
             }
         }
@@ -74,11 +77,16 @@ public class SignIn extends Fragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.login:
-                if (((MyApplication) getActivity().getApplication()).isOnline()) {
-                    addLoginMethod();
-                } else {
-                    Snackbar.make(getView(), "Internet is not Available", Snackbar.LENGTH_SHORT).show();
-                }
+               try{
+                   if (((MyApplication) getActivity().getApplication()).isOnline()) {
+                       addLoginMethod();
+                   } else {
+                       Snackbar.make(getView(), "Internet is not Available", Snackbar.LENGTH_SHORT).show();
+                   }
+               }catch (Exception e)
+               {
+
+               }
                 break;
         }
     }
@@ -114,10 +122,8 @@ public class SignIn extends Fragment implements View.OnClickListener {
                 int status = resource.data.getStatus();
                 String stats = MySharedData.getGeneralSaveSession("status0");
                 String activ_stats = MySharedData.getGeneralSaveSession("Act_status_1");
-
-
                 if (status==200) {
-                    if (activ_stats.equals("1") && !MySharedData.getGeneralSaveSession("userId").equals("") &&
+                    if (activ_stats.equals("1") && !MySharedData.getGeneralSaveSession("vender_email").equals("") &&
                             !MySharedData.getGeneralSaveSession("pass").equals("")) {
                         Intent intent = new Intent(context, HomeActivity.class);
                         startActivity(intent);
@@ -135,7 +141,7 @@ public class SignIn extends Fragment implements View.OnClickListener {
                     }
                 }
 
-                Toast.makeText(context, resource.data.getMessage(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, resource.data.getMessage(), Toast.LENGTH_SHORT).show();
                break;
             case ApplicationConstants.SHOW_ONLY_MSG:
                 Snackbar.make(viewBinding.getRoot(), resource.message, Snackbar.LENGTH_SHORT).show();

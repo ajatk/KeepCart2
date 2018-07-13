@@ -50,15 +50,21 @@ public class DashBoardPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View v = inflater.inflate(R.layout.viewpager_images, container, false);
-        ImageView imageView =   v.findViewById(R.id.inViewPagerImage);
-        position = position % bannerList.size();
-
-        Glide.with(context).load(Base_URL+bannerList.get(position).getImages())
+        ImageView imageView = v.findViewById(R.id.inViewPagerImage);
+        try {
+            position = position % bannerList.size();
+        Glide.with(context).load(Base_URL + bannerList.get(position).getImages())
                 .error(R.drawable.banner)
                 .into(imageView);
+            ViewPager viewPager = (ViewPager) container;
+            viewPager.addView(v, 0);
+        } catch (ArithmeticException a) {
+            a.printStackTrace();
+        }catch (Exception e)
+        {
 
-        ViewPager viewPager = (ViewPager) container;
-        viewPager.addView(v, 0);
+        }
+
         return v;
 
     }

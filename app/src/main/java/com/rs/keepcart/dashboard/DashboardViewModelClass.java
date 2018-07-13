@@ -4,9 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 
-import com.rs.keepcart.afterLogin.SelectedInfoModelClass;
 import com.rs.keepcart.dashboard.dashBoardModel.DashBoardModelClass;
-import com.rs.keepcart.editProfile.CityAndBankModelClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;
 import com.rs.keepcart.retrofit.Resource;

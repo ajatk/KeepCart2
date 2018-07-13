@@ -18,13 +18,11 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.rs.keepcart.R;
 import com.rs.keepcart.databinding.FragmentNewsPaperListBinding;
 import com.rs.keepcart.databinding.NewssPaperListBinding;
-import com.rs.keepcart.fragments.CustomerScreen;
 import com.rs.keepcart.model.SetNewspaperInfoModelClass;
 import com.rs.keepcart.retrofit.Resource;
 import com.rs.keepcart.utills.ApplicationConstants;
@@ -132,13 +130,13 @@ public class NewsPaperListActivity extends AppCompatActivity {
                 //statId =stateFilteredList.get(position).
 
                 positionId = (Integer) view.getId();
-                if (fragment == null) {
-                    fragment = new CustomerScreen();
-                    fragLoadMethod(fragment);
-
-                } else {
-                    fragLoadMethod(fragment);
-                }
+//                if (fragment == null) {
+//                    fragment = new CustomerScreen();
+//                    fragLoadMethod(fragment);
+//
+//                } else {
+//                    fragLoadMethod(fragment);
+//                }
 
             }
 
@@ -183,14 +181,14 @@ public class NewsPaperListActivity extends AppCompatActivity {
             holder.viewBinding.userNextPage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "position" + position, Toast.LENGTH_SHORT).show();
-                    if (fragment == null) {
+                    //Toast.makeText(context, "position" + position, Toast.LENGTH_SHORT).show();
+                    /*if (fragment == null) {
                         fragment = new CustomerScreen();
                         fragLoadMethod(fragment);
                     } else {
                         fragLoadMethod(fragment);
                     }
-                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.addToBackStack(null);*/
                 }
             });
         }
@@ -203,8 +201,6 @@ public class NewsPaperListActivity extends AppCompatActivity {
                 return 0;
             }
         }
-
-
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             private NewssPaperListBinding viewBinding;
@@ -241,17 +237,12 @@ public class NewsPaperListActivity extends AppCompatActivity {
                                     filteredList.add(state);
                                 }
                             }
-
                         }
 
                         newspaperFilteredList = filteredList;
-
-
                         filterResults.values = filteredList;
                         filterResults.count = filteredList.size();
                     }
-
-
 
                     return filterResults;
                 }

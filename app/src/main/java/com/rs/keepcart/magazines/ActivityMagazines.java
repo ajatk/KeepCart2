@@ -4,7 +4,6 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.rs.keepcart.R;
-import com.rs.keepcart.dashboard.NewsPaper;
 import com.rs.keepcart.databinding.FragmentMagazinesBinding;
 import com.rs.keepcart.retrofit.Resource;
 import com.rs.keepcart.utills.ApplicationConstants;

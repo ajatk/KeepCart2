@@ -1,21 +1,12 @@
 package com.rs.keepcart.login;
 
-import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -27,20 +18,14 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import com.rs.keepcart.comingSoon.VendorProccessActivity;
-import com.rs.keepcart.dashboard.HomeActivity;
 import com.rs.keepcart.R;
 import com.rs.keepcart.databinding.FragmentSignUpBinding;
 import com.rs.keepcart.retrofit.Resource;
-import com.rs.keepcart.userScreens.userDashBoard.UserHomeActivity;
 import com.rs.keepcart.utills.ApplicationConstants;
 import com.rs.keepcart.utills.MySharedData;
 
-import java.util.List;
-import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class SignUp extends Fragment implements  View.OnClickListener {
     public String TAG = SignUp.class.getSimpleName();
@@ -83,8 +68,6 @@ public class SignUp extends Fragment implements  View.OnClickListener {
         viewModel.loginLiveData.observe(this,this::signUpResponse);
         return view;
     }
-
-
 
     @Override
     public void onClick(View v) {
@@ -227,6 +210,7 @@ public class SignUp extends Fragment implements  View.OnClickListener {
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK & Intent.FLAG_ACTIVITY_NEW_TASK);
 
                         startActivity(intent);
+                        getActivity().finish();
                     } else
                     {
                         Toast.makeText(getActivity(), resource.data.getMessage(), Toast.LENGTH_SHORT).show();

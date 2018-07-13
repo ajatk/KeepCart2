@@ -1,8 +1,5 @@
 package com.rs.keepcart.login;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 /**
  * Created by sam on 5/28/2018.
  */

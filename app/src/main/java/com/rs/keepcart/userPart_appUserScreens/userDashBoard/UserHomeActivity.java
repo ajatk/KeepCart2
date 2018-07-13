@@ -1,9 +1,10 @@
-package com.rs.keepcart.userScreens.userDashBoard;
+package com.rs.keepcart.userPart_appUserScreens.userDashBoard;
 
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.view.menu.MenuView;
@@ -25,11 +26,12 @@ import com.rs.keepcart.salesReport.SalesReportFragment;
 import com.rs.keepcart.wallet.VendorWalletActivity;
 
 public class UserHomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        {
     private FragmentTransaction fragmentTransaction;
     private Fragment fragment;
     private HomeFragment homeFragment;
     NavigationView navigationView;
+    private BottomNavigationView bottomNavigationView;
     private Context context = this;
     private ActivityUserHomeBinding viewBinding;
     private MenuView.ItemView homes, packs;
@@ -47,8 +49,7 @@ public class UserHomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        bottomNavigationView =  findViewById(R.id.bottomNav_view);
 
         toolbar.setNavigationIcon(R.drawable.menu);
         fragment = new UserHomeFragment();
@@ -57,13 +58,9 @@ public class UserHomeActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
 
             super.onBackPressed();
-        }
+
     }
 
     public void loadFragment(Fragment fragment) {
@@ -73,51 +70,10 @@ public class UserHomeActivity extends AppCompatActivity
         fragmentTransaction.commit();
     }
 
+
+
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.home_: {
-
-                fragment = new HomeFragment();
-            }
-            break;
-            case R.id.plans_pack: {
-                Toast.makeText(getApplicationContext(), "success full click2------home", Toast.LENGTH_SHORT).show();
-            }
-            break;
-           /* case R.id.shop_extra: {
-                fragment = new HomeFragment();
-            }
-            break;
-            case R.id.bills_payment:
-                Toast.makeText(getApplicationContext(), "success full click------home", Toast.LENGTH_SHORT).show();
-                break;*/
-            case R.id.my_profile:
-                fragment = new EditProfile();
-                break;
-            case R.id.my_account:
-                Intent intentW = new Intent(context, VendorWalletActivity.class);
-                context.startActivity(intentW);
-                break;
-            case R.id.request_shift:
-                fragment = new RequestToShift();
-                break;
-           /* case R.id.vender_refer:
-
-                break;*/
-            case R.id.vender_sales:
-                fragment = new SalesReportFragment();
-                break;
-        }
-
-        if (fragment != null) {
-            loadFragment(fragment);
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }

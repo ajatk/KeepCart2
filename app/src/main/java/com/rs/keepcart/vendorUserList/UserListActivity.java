@@ -1,4 +1,4 @@
-package com.rs.keepcart.userlist;
+package com.rs.keepcart.vendorUserList;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;

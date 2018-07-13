@@ -1,35 +1,27 @@
 package com.rs.keepcart.magazines;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
-import android.database.Cursor;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.rs.keepcart.R;
 import com.rs.keepcart.databinding.FragmentMagazinesListBinding;
 import com.rs.keepcart.databinding.MagazinesListDesignBinding;
-import com.rs.keepcart.fragments.CustomerScreen;
-import com.rs.keepcart.retrofit.Resource;
-import com.rs.keepcart.utills.ApplicationConstants;
 import com.rs.keepcart.utills.DatabaseHandlerForModelClass;
 import com.rs.keepcart.utills.RecyclerTouchListner;
 
@@ -128,14 +120,14 @@ public class MagazinesList extends Fragment {
             public void onClick(View view, int position) {
 
 
-                if(fragment==null)
+              /*  if(fragment==null)
                 {
                     fragment = new CustomerScreen();
                     fragLoadMethod(fragment);
 
                 }else {
                     fragLoadMethod(fragment);
-                }
+                }*/
             }
             @Override
             public void onLongClick(View view, int position) {
@@ -163,7 +155,6 @@ public class MagazinesList extends Fragment {
 
         }
 
-
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.magazines_list_design,parent,false);
@@ -180,12 +171,18 @@ public class MagazinesList extends Fragment {
                     .error(R.drawable.banner)
                     .into(holder.viewBinding.magazineImage);
             holder.viewBinding.magazineName.setText(magzinesDetail.getName());
+            holder.viewBinding.magazineCount.setText(String.valueOf(magzinesDetail.getGetcount()));
+            holder.viewBinding.noOfUsers.setText(String.valueOf(magzinesDetail.getUsercount()));
 
+            holder.viewBinding.ratingTv.setText(magzinesDetail.getRating());
+            holder.viewBinding.price.setText(magzinesDetail.getPrice());
+            holder.viewBinding.ratingBar.setRating(Float.parseFloat(magzinesDetail.getRating()));
+           // trending1_video1_rating_star.setRating(Float.parseFloat(trending_video_rating.get(0)));
             holder.viewBinding.magazineImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "position"+position, Toast.LENGTH_SHORT).show();
-                    if(fragment == null)
+                    //Toast.makeText(context, "position"+position, Toast.LENGTH_SHORT).show();
+                    /*if(fragment == null)
                     {
                         fragment = new CustomerScreen();
                         fragLoadMethod(fragment);
@@ -193,7 +190,7 @@ public class MagazinesList extends Fragment {
                     {
                         fragLoadMethod(fragment);
                     }
-                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.addToBackStack(null);*/
                 }
             });
         }

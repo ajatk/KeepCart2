@@ -22,10 +22,9 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="200sp"
+            android:layout_height="180sp"
             android:layout_marginEnd="@dimen/margin_from_sides"
             android:layout_marginStart="@dimen/margin_from_sides"
-            android:layout_marginTop="8dp"
             android:background="@drawable/constraint_corners_login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -111,18 +110,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/marging_from_layout"
                 android:layout_marginStart="@dimen/marging_from_layout"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="4dp"
                 android:drawableBottom="@drawable/login_underline"
                 android:gravity="center"
                 android:maxLines="5"
-                android:padding="10sp"
                 android:text="@string/vendor_proccess_message"
                 android:textColor="@color/black"
                 android:textSize="@dimen/editName_textSize"
+                android:scaleX=".9"
+                android:scaleY=".9"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/progressBar_log" />
+
+            <TextView
+                android:id="@+id/continue_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:paddingTop="5sp"
+                android:paddingBottom="5sp"
+                android:textSize="16sp"
+                android:text="Continue"
+                android:elevation="5sp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
         <ImageView

@@ -1,13 +1,10 @@
 
 package com.rs.keepcart.magazines;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class MagzinesDetail implements Parcelable {
+public class MagzinesDetail {
 
     @SerializedName("magzines_id")
     @Expose
@@ -18,32 +15,44 @@ public class MagzinesDetail implements Parcelable {
     @SerializedName("images")
     @Expose
     private String images;
+    @SerializedName("price")
+    @Expose
+    private String price;
+    @SerializedName("rating")
+    @Expose
+    private String rating;
     @SerializedName("getcount")
     @Expose
-    private Integer getcount;
-
-    protected MagzinesDetail(Parcel in) {
-        magzinesId = in.readString();
-        name = in.readString();
-        images = in.readString();
-        if (in.readByte() == 0) {
-            getcount = null;
-        } else {
-            getcount = in.readInt();
-        }
+    private int getcount;
+    @SerializedName("usercount")
+    @Expose
+    private int usercount;
+    /**
+     * No args constructor for use in serialization
+     * 
+     */
+    public MagzinesDetail() {
     }
 
-    public static final Creator<MagzinesDetail> CREATOR = new Creator<MagzinesDetail>() {
-        @Override
-        public MagzinesDetail createFromParcel(Parcel in) {
-            return new MagzinesDetail(in);
-        }
-
-        @Override
-        public MagzinesDetail[] newArray(int size) {
-            return new MagzinesDetail[size];
-        }
-    };
+    /**
+     * 
+     * @param getcount
+     * @param price
+     * @param name
+     * @param images
+     * @param magzinesId
+     * @param rating
+     */
+    public MagzinesDetail(String magzinesId, String name, String images, String price, String rating,int usercount, int getcount) {
+        super();
+        this.magzinesId = magzinesId;
+        this.name = name;
+        this.images = images;
+        this.price = price;
+        this.rating = rating;
+        this.usercount = usercount;
+        this.getcount = getcount;
+    }
 
     public String getMagzinesId() {
         return magzinesId;
@@ -69,29 +78,35 @@ public class MagzinesDetail implements Parcelable {
         this.images = images;
     }
 
-    public Integer getGetcount() {
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+    public int getUsercount() {
+        return usercount;
+    }
+
+    public void setUsercount(int usercount) {
+        this.usercount = usercount;
+    }
+
+    public int getGetcount() {
         return getcount;
     }
 
-    public void setGetcount(Integer getcount) {
+    public void setGetcount(int getcount) {
         this.getcount = getcount;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(magzinesId);
-        dest.writeString(name);
-        dest.writeString(images);
-        if (getcount == null) {
-            dest.writeByte((byte) 0);
-        } else {
-            dest.writeByte((byte) 1);
-            dest.writeInt(getcount);
-        }
-    }
 }

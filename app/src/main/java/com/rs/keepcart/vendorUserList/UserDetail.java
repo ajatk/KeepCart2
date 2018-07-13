@@ -1,5 +1,5 @@
 
-package com.rs.keepcart.userlist;
+package com.rs.keepcart.vendorUserList;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -27,6 +27,9 @@ public class UserDetail {
     @SerializedName("name")
     @Expose
     private Object name;
+    @SerializedName("payment_status")
+    @Expose
+    private String paymentStatus;
 
     public String getId() {
         return id;
@@ -84,5 +87,11 @@ public class UserDetail {
         this.name = name;
     }
 
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
 
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
 }

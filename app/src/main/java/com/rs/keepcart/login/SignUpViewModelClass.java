@@ -4,16 +4,11 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 
-import com.rs.keepcart.model.SetNewspaperInfoModelClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;
 import com.rs.keepcart.retrofit.Resource;
-import com.rs.keepcart.userlist.UserListModelClass;
 import com.rs.keepcart.utills.ApplicationConstants;
 import com.rs.keepcart.utills.MySharedData;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

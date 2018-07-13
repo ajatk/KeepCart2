@@ -2,12 +2,8 @@ package com.rs.keepcart.comingSoon;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.rs.keepcart.login.SignUp;
-import com.rs.keepcart.login.SignUpModelClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;
 import com.rs.keepcart.retrofit.Resource;

@@ -1,7 +1,5 @@
 package com.rs.keepcart.editProfile;
 
-import java.util.ArrayList;
-
 /**
  * Created by sam on 6/21/2018.
  */

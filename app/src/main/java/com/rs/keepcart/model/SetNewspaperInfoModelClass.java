@@ -1,6 +1,6 @@
 package com.rs.keepcart.model;
 
-import com.rs.keepcart.userlist.UserDetail;
+import com.rs.keepcart.vendorUserList.UserDetail;
 
 import java.util.List;
 

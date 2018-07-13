@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rs.keepcart.R;
-import com.rs.keepcart.dashboard.dashBoardModel.VendorDetail;
 import com.rs.keepcart.dashboard.dashBoardModel.VendorPreviou;
 import com.rs.keepcart.databinding.TotalBillsOnDashboardBinding;
 
@@ -53,7 +52,13 @@ public class TotalBillsRecyclerAdapter extends RecyclerView.Adapter<TotalBillsRe
                  try {
 
                      holder.cardView.setVisibility(View.VISIBLE);
-                     holder.price.setText( vendorPrevious.get(position).getPreviousAmount());
+                     if(vendorPrevious.get(position).getPreviousAmount()==null)
+                     {
+                         holder.price.setText( "0");
+                     }else{
+                         holder.price.setText( vendorPrevious.get(position).getPreviousAmount());
+                     }
+
                      holder.totalMonths.setText( vendorPrevious.get(position).getCreatedDatetime());
 
 

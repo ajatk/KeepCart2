@@ -68,21 +68,52 @@
         android:text="Send Notification"
         android:textColor="@color/white"
         android:textSize="@dimen/paynow_text_size"
+        android:visibility="gone"
         app:layout_constraintBaseline_toBaselineOf="@+id/user_payBill"
         app:layout_constraintEnd_toStartOf="@+id/user_payBill"
+        android:layout_marginRight="12dp" />
+    <TextView
+        android:id="@+id/user_notificationDone"
+        android:layout_width="@dimen/sendNotification_width"
+        android:layout_height="@dimen/payBoton_height"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/button_background"
+        android:gravity="center"
+        android:padding="2sp"
+        android:visibility="gone"
+        android:text="Send Notification"
+        android:textColor="@color/white"
+        android:textSize="@dimen/paynow_text_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/user_payBill_done"
+        app:layout_constraintEnd_toStartOf="@+id/user_payBill_done"
         android:layout_marginRight="12dp" />
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/rupee"
+        android:layout_marginRight="8sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="@dimen/billamount_text_size"
+        android:visibility="gone"
         app:layout_constraintBaseline_toBaselineOf="@+id/user_billAmount"
-        app:layout_constraintEnd_toStartOf="@+id/user_billAmount" />
+        app:layout_constraintEnd_toStartOf="@+id/user_billAmount"
+        android:layout_marginEnd="8sp" />
 
-
+    <TextView
+        android:id="@+id/textView11Done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rupee"
+        android:layout_marginRight="8sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:textSize="@dimen/billamount_text_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/user_billAmountPaid"
+        app:layout_constraintEnd_toStartOf="@+id/user_billAmountPaid"
+        android:layout_marginEnd="8sp" />
     <TextView
         android:id="@+id/user_billAmount"
         android:layout_width="wrap_content"
@@ -93,6 +124,25 @@
         android:text="500"
         android:textSize="@dimen/billamount_text_size"
         android:textColor="@color/black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="@dimen/bil_margin_right" />
+    <TextView
+        android:id="@+id/user_billAmountPaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/bil_margin_right"
+        android:layout_marginTop="@dimen/bill_margin_top1"
+        android:clickable="false"
+        android:background="@drawable/paid_background"
+        android:text=" Paid "
+        android:visibility="gone"
+        android:paddingLeft="2sp"
+        android:paddingRight="2sp"
+        android:textSize="@dimen/billamount_paid_text_size"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -109,11 +159,25 @@
         android:text="PayBills"
         android:textColor="@color/white"
         android:textSize="@dimen/paynow_text_size"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/user_billAmount"
         app:layout_constraintTop_toBottomOf="@+id/user_billAmount"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/user_payBill_done"
+        android:layout_width="@dimen/paybill_width"
+        android:layout_height="@dimen/payBoton_height"
+        android:layout_marginBottom="@dimen/payNow_marginTop"
+        android:background="@drawable/button_background"
+        android:gravity="center"
+        android:text=" Done "
+        android:textColor="@color/white"
+        android:textSize="@dimen/paynow_text_size"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/user_billAmount" />
     <TextView
         android:id="@+id/paid_status"
         android:layout_width="80sp"

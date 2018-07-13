@@ -16,4 +16,5 @@
     <color name="color_white">#ffffffff</color>
     <color name="color_black">#000000</color>
     <color name="app_text_color">#eb058c</color>
+    <color name="change_image_backgroundColor">#4f8db1f2</color>
 </resources>

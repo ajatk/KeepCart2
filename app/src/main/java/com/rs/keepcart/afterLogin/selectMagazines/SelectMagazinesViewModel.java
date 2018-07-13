@@ -3,13 +3,11 @@ package com.rs.keepcart.afterLogin.selectMagazines;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.rs.keepcart.magazines.MagazinesModelClass;
 import com.rs.keepcart.magazines.SetMagazinesInfoClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;
 import com.rs.keepcart.retrofit.Resource;
 import com.rs.keepcart.utills.ApplicationConstants;
-import com.rs.keepcart.utills.MySharedData;
 
 import retrofit2.Call;
 import retrofit2.Callback;

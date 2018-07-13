@@ -1,0 +1,332 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/mainContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/subContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="@dimen/profile_image_height_width"
+                    android:layout_height="@dimen/profile_image_height_width"
+                    android:layout_marginLeft="@dimen/month_calculation_margin_start"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="@dimen/profil_image_margin_top"
+                    android:focusable="true"
+                    android:src="@drawable/profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/vendorName_id"
+                    android:layout_width="150sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/profile_name_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/profileImage"
+                    app:layout_constraintStart_toEndOf="@+id/profileImage"
+                    app:layout_constraintTop_toTopOf="@+id/profileImage" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="@dimen/month_calculation_margin_start"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="@dimen/view1_margin_top"
+                    android:background="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vendorName_id" />
+
+                <ImageView
+                    android:id="@+id/imageOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/option_menu_height"
+                    android:layout_marginEnd="@dimen/month_calculation_margin_start"
+                    android:layout_marginRight="@dimen/month_calculation_margin_start"
+                    android:background="@drawable/menu_vert"
+                    app:layout_constraintBottom_toTopOf="@+id/view1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_bills"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/month_calculation_margin_start1"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start1"
+                    android:layout_marginTop="14dp"
+                    android:background="#15dddddd"
+                    android:foregroundGravity="center"
+                    android:padding="4sp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/totalBillsTv" />
+
+                <TextView
+                    android:id="@+id/totalBillsTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/month_calculation_margin_start"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="@dimen/month_calculation_margin_top"
+                    android:text="Total Bills"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/quick_action_text"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                <TextView
+                    android:id="@+id/dueBillAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="@dimen/month_calculation_margin_top"
+                    android:text="@string/rupee"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/quick_action_text"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/dueBillAmount_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/view1"
+                    android:layout_marginRight="4dp" />
+
+                <TextView
+                    android:id="@+id/textView_dueBill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="Due Bill Amount :-"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/quick_action_text"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/dueBillAmount"
+                    app:layout_constraintEnd_toStartOf="@+id/dueBillAmount"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/dueBillAmount_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dueBill_Amount_margin_right"
+                    android:text="788"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/quick_action_text"
+                    android:textStyle="bold"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/dueBillAmount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginRight="8dp" />
+
+                <!-- <TextView
+                    android:id="@+id/totalBillsTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/month_calculation_margin_start"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="@dimen/month_calculation_margin_top"
+                    android:text="@string/rupee"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/month_calculation_price"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginStart="6dp"
+                    android:text="799"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/month_calculation_price"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textView5"
+                    app:layout_constraintStart_toEndOf="@+id/totalBillsTv" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/month_calculation_margin_start"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="8dp"
+                    android:maxLines="1"
+                    android:text="Collection Of this month "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/profile_name_text_size1"
+                    app:layout_constraintEnd_toStartOf="@+id/lastMonth_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/totalBillsTv" />
+
+                <TextView
+                    android:id="@+id/rupee_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/magin_ruppee_symbol"
+                    android:layout_marginStart="@dimen/magin_ruppee_symbol"
+                    android:text="@string/rupee"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/month_calculation_price"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/lastMonthCash"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="@+id/lastMonthCash" />
+
+                <TextView
+                    android:id="@+id/lastMonthCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/month_calculation_margin_start"
+                    android:layout_marginRight="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="13dp"
+                    android:text="799"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/month_calculation_price"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/rupee_right"
+                    app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                <TextView
+                    android:id="@+id/lastMonth_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="8dp"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:text="Collection Of this month "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/profile_name_text_size1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@+id/rupee_right"
+                    android:layout_marginRight="@dimen/month_calculation_margin_start" />-->
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="@dimen/month_calculation_margin_start"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="@dimen/view2_margin_top"
+                    android:background="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recycler_bills" />
+
+                <TextView
+                    android:id="@+id/totals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/toal_bill_margin_top"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/Redd"
+                    android:textSize="@dimen/month_calculation_price1"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#ddd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recycler_bills" />
+
+                <TextView
+                    android:id="@+id/quickAction"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/month_calculation_margin_start"
+                    android:layout_marginStart="@dimen/month_calculation_margin_start"
+                    android:layout_marginTop="8dp"
+                    android:gravity="left"
+                    android:text="Quick Actions"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/quick_action_text"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                <ImageView
+                    android:id="@+id/left_scroll"
+                    android:layout_width="@dimen/recycle_left_right_button_width"
+                    android:layout_height="@dimen/recycle_left_right_button_heigth"
+                    android:padding="2sp"
+                    android:src="@drawable/drop_down"
+
+                    app:layout_constraintBottom_toBottomOf="@id/recycler_bills"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/recycler_bills" />
+
+                <ImageView
+                    android:id="@+id/right_scroll"
+                    android:layout_width="@dimen/recycle_left_right_button_width"
+                    android:layout_height="@dimen/recycle_left_right_button_heigth"
+                    android:padding="2sp"
+
+                    android:src="@drawable/right_back"
+                    app:layout_constraintBottom_toBottomOf="@id/recycler_bills"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/recycler_bills" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerNewsPaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="120dp"
+                android:layout_marginTop="13dp"
+                android:background="@color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/subContainer" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

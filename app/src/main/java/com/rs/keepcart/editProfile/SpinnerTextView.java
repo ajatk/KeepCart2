@@ -6,7 +6,6 @@ import android.content.res.TypedArray;
 import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.TextView;
 
 import com.rs.keepcart.R;
 

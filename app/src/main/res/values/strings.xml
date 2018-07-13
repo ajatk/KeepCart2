@@ -32,7 +32,7 @@
     <string name="title_activity_user_home">UserHomeActivity</string>
     <string name="all_user_title">All User</string>
     <string name="user_status">Month History</string>
-    <string name="vendor_proccess_message">You have successfully submit, please wait for your Id and Password Activation ...We will notify you soon. approx (72 hrs) ...</string>
+    <string name="vendor_proccess_message">You have successfully submit, please wait for your Id and Password Activation ...We will notify you soon. approx (24 hrs) ...</string>
     <string name="keepcart_newspaper">Keepcart is a newspaper / magazine billing and payment solution for vendors and
         distributors with other service like household units and utility services headquartered in Mohali, Punjab.
         Its aim is to make the collection and payment process more smooth, easy and efficient for newspaper and magazine
@@ -43,6 +43,7 @@
         SCO 6, Vasant Vihar, Phase 2,
         Himmatgarh, Zirakpur, Dhakoli,
         Mohali, Punjab, 140603</string>
+    <string name="wallet_here"> Use Wallet Amount</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 

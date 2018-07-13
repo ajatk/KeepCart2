@@ -3,10 +3,7 @@ package com.rs.keepcart.salesReport;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
-import android.widget.Toast;
 
-import com.rs.keepcart.login.SignUpInfoClass;
-import com.rs.keepcart.login.SignUpModelClass;
 import com.rs.keepcart.magazines.SetMagazinesInfoClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;

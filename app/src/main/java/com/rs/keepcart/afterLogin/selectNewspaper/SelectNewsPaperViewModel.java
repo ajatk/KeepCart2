@@ -4,7 +4,6 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
 import com.rs.keepcart.afterLogin.SelectedInfoModelClass;
-import com.rs.keepcart.model.SetNewspaperInfoModelClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;
 import com.rs.keepcart.retrofit.Resource;

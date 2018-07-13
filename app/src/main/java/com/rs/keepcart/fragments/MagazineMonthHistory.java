@@ -11,13 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.rs.keepcart.R;
 import com.rs.keepcart.databinding.FragmentMonthHistoryBinding;
 import com.rs.keepcart.databinding.MagazinesListSalesReportBinding;
-import com.rs.keepcart.databinding.NewpaperSalesReportListBinding;
-import com.rs.keepcart.databinding.NewssPaperListBinding;
 
 
 public class MagazineMonthHistory extends Fragment {

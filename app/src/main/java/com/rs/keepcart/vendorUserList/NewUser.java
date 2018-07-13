@@ -1,4 +1,4 @@
-package com.rs.keepcart.userlist;
+package com.rs.keepcart.vendorUserList;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -40,7 +40,7 @@ public class NewUser extends Fragment {
     }
 
     private List<UserDetail> userDetail;
-    private UserViewModelClass viewModel;
+
     private FragmentManager fragmentManager;
     public static final String Base_URL = "http://www.uicreations.com/keepkart/assets/images/";
     @Override

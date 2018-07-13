@@ -1,9 +1,8 @@
-package com.rs.keepcart.userlist;
+package com.rs.keepcart.vendorUserList;
 
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.rs.keepcart.magazines.MagazinesModelClass;
 import com.rs.keepcart.model.SetNewspaperInfoModelClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;

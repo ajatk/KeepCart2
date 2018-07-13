@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/home"
+        android:enabled="true"
         android:icon="@drawable/homeicon"
-        android:title="Home" />
+        android:title="Home"
+        app:showAsAction="always|withText" />
     <item
-        android:id="@+id/reports"
-        android:icon="@drawable/homeicon"
-        android:title="Reports" />
+        android:id="@+id/findus"
+        android:enabled="true"
+        android:icon="@drawable/search_black"
+        android:title="Find Us"
+
+        app:showAsAction="always|withText" />
     <item
-        android:id="@+id/my_family"
-        android:icon="@drawable/homeicon"
-        android:title="Call to Book" />
+        android:id="@+id/aboutus"
+        android:enabled="true"
+        android:icon="@drawable/active_plan_screen"
+        android:title="About Us"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/wallet_user"
+        android:enabled="true"
+        android:icon="@drawable/wallet_user"
+        android:title="Donations"
+
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/profile_s"
+        android:enabled="true"
+        android:icon="@drawable/outline_black"
+        android:title="Call Now"
+
+        app:showAsAction="always|withText" />
+
 
 </menu>

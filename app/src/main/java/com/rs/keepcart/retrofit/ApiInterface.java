@@ -9,7 +9,6 @@ import com.rs.keepcart.dashboard.dashBoardModel.DashBoardModelClass;
 import com.rs.keepcart.editProfile.profileModel.EditProfileImageModelClass;
 import com.rs.keepcart.editProfile.profileModel.EditProfileModelClass;
 import com.rs.keepcart.editProfile.profileModel.GetDataProfileModelClass;
-import com.rs.keepcart.editProfile.profileModel.Profile;
 import com.rs.keepcart.login.LoginModelClass;
 import com.rs.keepcart.login.SignUpModelClass;
 import com.rs.keepcart.comingSoon.VendorStatusModelClass;
@@ -19,10 +18,8 @@ import com.rs.keepcart.paytmSet.Checksum;
 import com.rs.keepcart.paytmSet.OnTransactionResponseModelClass;
 import com.rs.keepcart.paytmSet.TransactionResponseElementsModelClass;
 import com.rs.keepcart.salesReport.newspaperSales.NewspaperSalesModelClass;
-import com.rs.keepcart.userlist.UserListModelClass;
+import com.rs.keepcart.vendorUserList.UserListModelClass;
 import com.rs.keepcart.wallet.walletModelClass.WalletModelClass;
-
-import java.io.File;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;

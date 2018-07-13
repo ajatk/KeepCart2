@@ -5,13 +5,10 @@ import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 
 import com.rs.keepcart.afterLogin.SelectedInfoModelClass;
-import com.rs.keepcart.afterLogin.selectNewspaper.SelectedNewsPaperModelClass;
 import com.rs.keepcart.retrofit.ApiClient;
 import com.rs.keepcart.retrofit.ApiInterface;
 import com.rs.keepcart.retrofit.Resource;
 import com.rs.keepcart.utills.ApplicationConstants;
-
-import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;

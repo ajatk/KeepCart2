@@ -27,24 +27,14 @@ public class HomeViewPagerAdapter extends FragmentStatePagerAdapter {
         this.context = context;
         this.vendorList = vendor_List;
         this.mFragmentList = mFragmentList;
-        viewPager.setOffscreenPageLimit(3);
+            viewPager.setOffscreenPageLimit(3);
     }
 
 
     @Override
     public Fragment getItem(int position) {
             return mFragmentList.get(position);
-//        if (position == 0) {
-//            NewsPaper newsPaper = new NewsPaper();
-//           //    newsPaper.setVendorList(vendorList);
-//            return newsPaper;
-//        }  else if (position ==1){
-//
-//            return new ComingSoonFragment();
-//        }
-//        else{
-//            return new ComingSoonFragment();
-//        }
+
 
     }
      public void addFragment(Fragment fragment)
@@ -70,7 +60,5 @@ public class HomeViewPagerAdapter extends FragmentStatePagerAdapter {
         }
 
         return title;
-
     }
-
 }

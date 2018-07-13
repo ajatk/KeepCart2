@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rs.keepcart.userScreens.userDashBoard.UserHomeActivity">
+    tools:context="com.rs.keepcart.userPart_appUserScreens.userDashBoard.UserHomeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

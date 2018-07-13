@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rs.keepcart.R;
-import com.rs.keepcart.databinding.FragmentMagazinesListBinding;
 import com.rs.keepcart.databinding.FragmentMagazinesListSalesBinding;
 import com.rs.keepcart.fragments.MagazineMonthHistory;
 
