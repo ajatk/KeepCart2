@@ -40,7 +40,9 @@ import com.rs.keepcart.newsPaperList.NewsPaperList;
 import com.rs.keepcart.newsPaperList.NewsPaperListActivity;
 import com.rs.keepcart.salesReport.SalesReportActivity;
 import com.rs.keepcart.salesReport.SalesReportFragment;
+import com.rs.keepcart.userPart_appUserScreens.BillsPaymentActivity;
 import com.rs.keepcart.userPart_appUserScreens.rawFiles.PlansAndPacksActivity;
+import com.rs.keepcart.userPart_appUserScreens.shopAndExtra.MagaZineTabActivity;
 import com.rs.keepcart.utills.MyApplication;
 import com.rs.keepcart.utills.MySharedData;
 import com.rs.keepcart.vendorUserList.UserDetail;
@@ -161,15 +163,17 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
     }
     public void inItList()
     {   itemName = new ArrayList<>();
-        itemImag = new int[]{R.drawable.active_plan_screen,R.drawable.newspaper,
-                R.drawable.offers__icon, R.drawable.magazine,
-                R.drawable.sales_report, R.drawable.wallet_filled};
+        itemImag = new int[]{R.drawable.active_plan_screen,R.drawable.ic_shopping_cart,
+                R.drawable.ic_bills_and_payments,
+                R.drawable.ic_deals_icon,
+                R.drawable.ic_pay_other_bills_screen,
+                R.drawable.wallet_user};
 
-        itemName.add("Active Plans And Packs");
-        itemName.add("NewsPaper List");
-        itemName.add("Offers");
-        itemName.add("Magazines");
-        itemName.add("Sale Report");
+        itemName.add("Active Plans");
+        itemName.add("Shop & Extra");
+        itemName.add("Bills Payment");
+        itemName.add("Deals");
+        itemName.add("Pay Other Bills");
         itemName.add("Wallet");
         viewBinding.recyclerNewsPaper.setLayoutManager(new GridLayoutManager(context,3));
         viewBinding.recyclerNewsPaper.setAdapter(new UserNewsAdapter(context,itemName, itemImag, getChildFragmentManager()));
@@ -268,7 +272,7 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
 
                             break;
                         case 1:
-                            Intent intentN = new Intent(context, NewsPaperListActivity.class);
+                            Intent intentN = new Intent(context, MagaZineTabActivity.class);
                             context.startActivity(intentN);
                             break;
                         case 2:
@@ -276,7 +280,7 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
 //                              context.startActivity(intentC);
                             break;
                         case 3:
-                            Intent intentM = new Intent(context, ActivityMagazines.class);
+                            Intent intentM = new Intent(context, BillsPaymentActivity.class);
                             context.startActivity(intentM);
                             break;
                         case 4:

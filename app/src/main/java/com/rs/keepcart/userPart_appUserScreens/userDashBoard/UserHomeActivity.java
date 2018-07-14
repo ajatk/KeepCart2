@@ -43,15 +43,11 @@ public class UserHomeActivity extends AppCompatActivity
         viewBinding = DataBindingUtil.setContentView(this,R.layout.activity_user_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+
 
         bottomNavigationView =  findViewById(R.id.bottomNav_view);
 
-        toolbar.setNavigationIcon(R.drawable.menu);
+        toolbar.setNavigationIcon(R.mipmap.ic_launcher_);
         fragment = new UserHomeFragment();
         loadFragment(fragment);
     }

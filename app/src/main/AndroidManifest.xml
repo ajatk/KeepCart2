@@ -116,7 +116,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity android:name=".userPart_appUserScreens.rawFiles.PlansAndPacksActivity" />
-        <activity android:name=".userPart_appUserScreens.attendence.AttendenceActivity"></activity>
+        <activity android:name=".userPart_appUserScreens.attendence.AttendenceActivity" />
+        <activity android:name=".userPart_appUserScreens.shopAndExtra.MagaZineTabActivity" />
+        <activity android:name=".userPart_appUserScreens.BillsPaymentActivity"></activity>
     </application>
 
 </manifest>

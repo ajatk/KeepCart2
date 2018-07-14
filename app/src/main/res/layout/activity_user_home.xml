@@ -31,19 +31,24 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
+                android:layout_height="match_parent"
+                >
                 <FrameLayout
                     android:id="@+id/frame"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
                     >
 
                     <android.support.design.widget.BottomNavigationView
                         android:id="@+id/bottomNav_view"
                         android:layout_width="match_parent"
                         android:layout_height="60sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
                         android:layout_gravity="bottom"
                         android:background="@color/gray_set"
                         android:elevation="10sp"
@@ -51,6 +56,8 @@
                         app:itemTextColor="@color/white"
                         app:menu="@menu/bottom_navigation_bar_item" />
                 </FrameLayout>
+
+
             </RelativeLayout>
 
         </LinearLayout>
