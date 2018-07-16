@@ -1,6 +1,7 @@
 package com.rs.keepcart.userPart_appUserScreens.rawFiles;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -22,8 +23,7 @@ public class PlansAndPacksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_plans_and_packs);
-
+       viewbinding = DataBindingUtil.setContentView(this,R.layout.activity_plans_and_packs);
         viewbinding.salesReportTabLayout.setupWithViewPager(viewbinding.salesReportViewPager);
         viewpagerAdapter = new PlansAndpacksViewpagerAdapter(this, getSupportFragmentManager());
         viewbinding.salesReportViewPager.setAdapter(viewpagerAdapter);

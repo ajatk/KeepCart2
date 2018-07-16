@@ -1,0 +1,182 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4sp"
+        android:background="@color/gray_set">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/magazinelist_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/magazine_image"
+                android:layout_width="@dimen/magazine_image_width"
+                android:layout_height="@dimen/magazine_image_width"
+                android:scaleType="fitXY"
+                android:layout_marginStart="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/magazineName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="16dp"
+                android:text="Moda jietom"
+                android:textColor="@color/black"
+                android:textSize="@dimen/magazine_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/magazine_image"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="13dp" />
+
+            <TextView
+                android:id="@+id/magazineCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="(40)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/magazine_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/magazineName"
+                app:layout_constraintStart_toEndOf="@+id/magazineName"
+                android:layout_marginLeft="4dp" />
+
+            <TextView
+                android:id="@+id/noOfUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="No of Users"
+                android:textColor="@color/black"
+                android:textSize="@dimen/magazine_user_text_size"
+                app:layout_constraintStart_toStartOf="@+id/magazineName"
+                app:layout_constraintTop_toBottomOf="@+id/magazineName" />
+
+            <TextView
+                android:id="@+id/no_OfUsers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="(500)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/magazine_user_text_size"
+                app:layout_constraintBaseline_toBaselineOf="@+id/noOfUser"
+                app:layout_constraintStart_toEndOf="@+id/noOfUser"
+                android:layout_marginLeft="6dp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:backgroundTint="@color/Redd"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/Redd"
+                android:rating="3.5"
+                android:stepSize="0.1"
+                android:text="No of Users"
+                app:layout_constraintStart_toStartOf="@+id/magazineName"
+                app:layout_constraintTop_toBottomOf="@+id/noOfUser" />
+            <!--android:padding="@dimen/paddigng_ratting_text" below ratin tv-->
+            <TextView
+                android:id="@+id/rating_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/ratting_height"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_background"
+                android:gravity="center"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/rating_text_size"
+                app:layout_constraintStart_toEndOf="@+id/magazine_image"
+                app:layout_constraintTop_toBottomOf="@+id/noOfUser"
+                android:layout_marginLeft="14dp" />
+
+            <ImageView
+                android:id="@+id/user_notification"
+                android:layout_width="@dimen/fav_height_width"
+                android:layout_height="@dimen/fav_height_width"
+                android:layout_marginEnd="@dimen/fav_margin_right"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                android:src="@drawable/favorite_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/fav_margin_right" />
+
+            <TextView
+                android:id="@+id/rupee_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:text="@string/rupee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/magazine_user_text_size"
+                app:layout_constraintBaseline_toBaselineOf="@+id/price"
+                app:layout_constraintEnd_toStartOf="@+id/price"
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/fav_margin_right"
+                android:layout_marginTop="8dp"
+                android:text="(500)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/magazine_user_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="@dimen/fav_margin_right" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Buy Now"
+                android:paddingLeft="8sp"
+                android:paddingRight="8sp"
+                android:paddingTop="2sp"
+                android:paddingBottom="2sp"
+                android:textSize="@dimen/btn_text_size"
+                android:textColor="@color/color_white"
+                android:background="@drawable/button_background"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
+                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                android:layout_marginRight="8dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/button_background"
+                android:paddingBottom="2sp"
+                android:paddingLeft="8sp"
+                android:paddingRight="8sp"
+                android:paddingTop="2sp"
+                android:text="Add to Cart"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/btn_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price"
+                android:layout_marginRight="8dp" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

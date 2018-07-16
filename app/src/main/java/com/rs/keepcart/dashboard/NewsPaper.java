@@ -80,7 +80,8 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
     public void setVendorList(List<VendorDetail> vendorList) {
         this.vendorList = vendorList;
         if(vendorList != null) {
-            onClickSet();
+            vendorNameId();
+
             //inItList();
         }
     }
@@ -111,6 +112,7 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
         context = getActivity();
         totalBills = view.findViewById(R.id.totalBillsTv);
         inItList();
+        onClickSet();
          image = MySharedData.getGeneralSaveSession("image_saved");
 
         Glide.with(context).load(Base_URL + image )
@@ -122,17 +124,16 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
     @SuppressLint("SetTextI18n")
     public void onClickSet()
     {
-        viewBinding.imageOption.setOnClickListener(this);
         viewBinding.profileImage.setOnClickListener(this);
+        viewBinding.imageOption.setOnClickListener(this);
         viewBinding.leftScroll.setOnClickListener(this);
         viewBinding.rightScroll.setOnClickListener(this);
 
+    }
+    public void vendorNameId()
+    {
         try{
-            if(vendorList==null){
-
-             }
-             else {
-
+            if(vendorList!=null){
                 viewBinding.vendorNameId.setText(vendorList.get(i).getName() + " "+ vendorList.get(i).getVendorId());
                 if(vendorList.get(i).getDueAmounts().getDueAmount()==null)
                 {
@@ -148,7 +149,6 @@ public class NewsPaper extends Fragment implements View.OnClickListener, Connect
         {
             e.printStackTrace();
         }
-
     }
     public void totalBillsRecycle()
     {

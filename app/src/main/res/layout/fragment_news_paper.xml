@@ -33,7 +33,7 @@
                     android:layout_marginLeft="@dimen/month_calculation_margin_start"
                     android:layout_marginStart="@dimen/month_calculation_margin_start"
                     android:layout_marginTop="@dimen/profil_image_margin_top"
-                    android:focusable="true"
+
                     android:src="@drawable/profile"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

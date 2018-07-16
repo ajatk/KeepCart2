@@ -182,5 +182,9 @@
     <dimen name="billamount_paid_text_size">14sp</dimen>
     /// fragment User-Home ................../
     <dimen name="view_pager_height_2">500sp</dimen>
+    <dimen name="btn_text_size">12sp</dimen>
+    <dimen name="margin_top_photo">84dp</dimen>
+    <dimen name="margin_top_cardview">128dp</dimen>
+    <dimen name="profile_Image_payotherBills">85sp</dimen>
 
 </resources>

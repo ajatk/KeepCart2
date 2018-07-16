@@ -27,7 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profileImage"
+                    android:id="@+id/profileImageUser"
                     android:layout_width="@dimen/profile_image_height_width"
                     android:layout_height="@dimen/profile_image_height_width"
                     android:layout_marginLeft="@dimen/month_calculation_margin_start"
@@ -49,9 +49,9 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/profile_name_text_size"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/profileImage"
-                    app:layout_constraintStart_toEndOf="@+id/profileImage"
-                    app:layout_constraintTop_toTopOf="@+id/profileImage" />
+                    app:layout_constraintBottom_toBottomOf="@+id/profileImageUser"
+                    app:layout_constraintStart_toEndOf="@+id/profileImageUser"
+                    app:layout_constraintTop_toTopOf="@+id/profileImageUser" />
 
                 <View
                     android:id="@+id/view1"

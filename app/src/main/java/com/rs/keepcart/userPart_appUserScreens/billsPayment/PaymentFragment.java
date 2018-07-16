@@ -1,12 +1,10 @@
-package com.rs.keepcart.userPart_appUserScreens.shopAndExtra;
+package com.rs.keepcart.userPart_appUserScreens.billsPayment;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,54 +14,58 @@ import android.widget.Filter;
 import android.widget.Filterable;
 
 import com.rs.keepcart.R;
-import com.rs.keepcart.databinding.FragmentUserListBinding;
-import com.rs.keepcart.databinding.FragmentUserMagazineListBinding;
+import com.rs.keepcart.databinding.FragmentBillsBinding;
+import com.rs.keepcart.databinding.FragmentPaymentBinding;
 import com.rs.keepcart.databinding.MagazinesListDesignBinding;
-import com.rs.keepcart.databinding.UserMagazineListBinding;
+import com.rs.keepcart.databinding.PaymentListBinding;
 
-public class UserMagazineListFragment extends Fragment {
 
-    private FragmentUserMagazineListBinding viewBinding;
+public class PaymentFragment extends Fragment {
+
+    private FragmentPaymentBinding viewBinding;
     private  Context context;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_user_magazine_list, container, false);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_payment, container, false);
+
         viewBinding = DataBindingUtil.bind(view);
         context = getActivity();
-        viewBinding.magazinelistRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        viewBinding.magazinelistRecyclerView.setAdapter(new MagazinesAdapter(context));
+        viewBinding.billsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        viewBinding.billsRecyclerView.setAdapter(new PaymentFragmentAdapter(context));
         return view;
     }
 
-    public class MagazinesAdapter extends RecyclerView.Adapter<MagazinesAdapter.ViewHolder> implements Filterable {
+    public class PaymentFragmentAdapter extends RecyclerView.Adapter<PaymentFragmentAdapter.ViewHolder> implements Filterable {
         private Context context;
 
 
 
-        public MagazinesAdapter(Context activity) {
+        public PaymentFragmentAdapter(Context activity) {
             this.context = activity;
         }
 
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_magazine_list, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.payment_list, parent, false);
             return new ViewHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        public void onBindViewHolder(ViewHolder holder, int position) {
 
         }
+
+
         @Override
         public int getItemCount() {
             return 10/*collectionListD.size()*/;
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            private UserMagazineListBinding viewBinding;
-
+            private PaymentListBinding viewBinding;
             public ViewHolder(View itemView) {
                 super(itemView);
                 viewBinding = DataBindingUtil.bind(itemView);
@@ -110,11 +112,12 @@ public class UserMagazineListFragment extends Fragment {
 
                 @Override
                 protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                //    filtermagzinesDetail = (List<MagzinesDetail>) filterResults.values;
+                    //    filtermagzinesDetail = (List<MagzinesDetail>) filterResults.values;
 
                     notifyDataSetChanged();
                 }
             };
         }
     }
+
 }

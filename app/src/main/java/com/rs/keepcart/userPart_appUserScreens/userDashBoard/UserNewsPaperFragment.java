@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
@@ -22,32 +21,27 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.rs.keepcart.R;
 import com.rs.keepcart.adapter.TotalBillsRecyclerAdapter;
 import com.rs.keepcart.connectivity.ConnectivityReceiver;
 import com.rs.keepcart.connectivity.NoInternetConection;
-import com.rs.keepcart.dashboard.NewsPaper;
 import com.rs.keepcart.dashboard.dashBoardModel.VendorDetail;
 import com.rs.keepcart.dashboard.dashBoardModel.VendorPreviou;
-import com.rs.keepcart.databinding.FragmentNewsPaperBinding;
 import com.rs.keepcart.databinding.FragmentUserNewsPaperBinding;
 import com.rs.keepcart.editProfile.EditProfile;
-import com.rs.keepcart.magazines.ActivityMagazines;
 import com.rs.keepcart.magazines.Magazines;
 import com.rs.keepcart.model.SetNewspaperInfoModelClass;
 import com.rs.keepcart.newsPaperList.NewsPaperList;
-import com.rs.keepcart.newsPaperList.NewsPaperListActivity;
 import com.rs.keepcart.salesReport.SalesReportActivity;
 import com.rs.keepcart.salesReport.SalesReportFragment;
-import com.rs.keepcart.userPart_appUserScreens.BillsPaymentActivity;
+import com.rs.keepcart.userPart_appUserScreens.billsPayment.BillsPaymentActivity;
+import com.rs.keepcart.userPart_appUserScreens.payOtherBills.PayOthersBillActivity;
 import com.rs.keepcart.userPart_appUserScreens.rawFiles.PlansAndPacksActivity;
 import com.rs.keepcart.userPart_appUserScreens.shopAndExtra.MagaZineTabActivity;
+import com.rs.keepcart.userPart_appUserScreens.userProfile.UserProfileActivity;
 import com.rs.keepcart.utills.MyApplication;
-import com.rs.keepcart.utills.MySharedData;
 import com.rs.keepcart.vendorUserList.UserDetail;
 import com.rs.keepcart.vendorUserList.UserList;
-import com.rs.keepcart.vendorUserList.UserListActivity;
 import com.rs.keepcart.wallet.VendorWalletActivity;
 
 import java.util.ArrayList;
@@ -82,7 +76,8 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
     public void setVendorList(List<VendorDetail> vendorList) {
         this.vendorList = vendorList;
         if(vendorList != null) {
-            onClickSet();
+            vendorNameId();
+
             //inItList();
         }
     }
@@ -113,6 +108,7 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
         context = getActivity();
         totalBills = view.findViewById(R.id.totalBillsTv);
         inItList();
+        onClickSet();
       /*  image = MySharedData.getGeneralSaveSession("image_saved");
 
         Glide.with(context).load(Base_URL + image )
@@ -124,11 +120,14 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
     @SuppressLint("SetTextI18n")
     public void onClickSet()
     {
+        viewBinding.profileImageUser.setOnClickListener(this);
         viewBinding.imageOption.setOnClickListener(this);
-        viewBinding.profileImage.setOnClickListener(this);
         viewBinding.leftScroll.setOnClickListener(this);
         viewBinding.rightScroll.setOnClickListener(this);
 
+    }
+    public void vendorNameId()
+    {
         try{
             if(vendorList!=null){
                 viewBinding.vendorNameId.setText(vendorList.get(i).getName() + " "+ vendorList.get(i).getVendorId());
@@ -140,12 +139,10 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
                     viewBinding.dueBillAmountTv.setText( vendorList.get(i).getDueAmounts().getDueAmount());
                 }
             }
-
         } catch (Exception e)
         {
             e.printStackTrace();
         }
-
     }
     public void totalBillsRecycle()
     {
@@ -186,16 +183,9 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
             case R.id.imageOption:
                 // popupOption.show();
                 break;
-            case R.id.profileImage:
-                if(fragment == null)
-                {
-                    fragment = new EditProfile();
-                    loadRecycleItemFragment(fragment);
-                }
-                else {
-                    loadRecycleItemFragment(fragment);
-                }
-                fragmentTransaction.addToBackStack(null);
+            case R.id.profileImageUser:
+                Intent intentS = new Intent(context, UserProfileActivity.class);
+                context.startActivity(intentS);
                 break;
             case R.id.left_scroll:
                 //Toast.makeText(context, "clicked left", Toast.LENGTH_SHORT).show();
@@ -206,20 +196,7 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
                 break;
         }
     }
-    /* public void popupOptionMenu()
-     {
-         popupOption = new PopupMenu(getActivity(),viewBinding.imageOption);
-         popupOption.getMenuInflater().inflate(R.menu.pop_up_spiner_job, popupOption.getMenu());
 
-         popupOption.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-             @Override
-             public boolean onMenuItemClick(MenuItem item) {
-
-                 return true;
-             }
-         });
-     }
- */
     public class UserNewsAdapter extends RecyclerView.Adapter<UserNewsAdapter.ViewHolder> {
         private  List<String> itemName;
         private  int[] itemImag;
@@ -267,8 +244,8 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
                     fragmentTransaction = fm.beginTransaction();
                     switch (position) {
                         case 0:
-//                            Intent intent = new Intent(context, PlansAndPacksActivity.class);
-//                            context.startActivity(intent);
+                            Intent intent = new Intent(context, PlansAndPacksActivity.class);
+                            context.startActivity(intent);
 
                             break;
                         case 1:
@@ -276,16 +253,16 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
                             context.startActivity(intentN);
                             break;
                         case 2:
-//                              Intent intentC = new Intent(context, ComingSoonFragment.class);
-//                              context.startActivity(intentC);
+                              Intent intentC = new Intent(context, BillsPaymentActivity.class);
+                              context.startActivity(intentC);
                             break;
                         case 3:
-                            Intent intentM = new Intent(context, BillsPaymentActivity.class);
-                            context.startActivity(intentM);
+                            Intent intentB = new Intent(context, BillsPaymentActivity.class);
+                            context.startActivity(intentB);
                             break;
                         case 4:
-                            Intent intentS = new Intent(context, SalesReportActivity.class);
-                            context.startActivity(intentS);
+                            Intent intentP = new Intent(context, PayOthersBillActivity.class);
+                            context.startActivity(intentP);
                             break;
                         case 5:
                             Intent intentW = new Intent(context, VendorWalletActivity.class);

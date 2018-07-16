@@ -170,5 +170,11 @@
 
     /// fragment User-Home ................../
     <dimen name="view_pager_height_2">610sp</dimen>
+    <dimen name="btn_text_size">12sp</dimen>
+
+    //payother bills acitvitry.............../
+    <dimen name="margin_top_photo">120dp</dimen>
+    <dimen name="margin_top_cardview">158dp</dimen>
+    <dimen name="profile_Image_payotherBills">112sp</dimen>
 
 </resources>
