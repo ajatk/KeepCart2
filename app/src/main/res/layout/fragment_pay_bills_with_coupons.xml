@@ -4,7 +4,8 @@
     tools:context="com.rs.keepcart.userPart_appUserScreens.payOtherBills.PayOthersBillActivity">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/gray_set">
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

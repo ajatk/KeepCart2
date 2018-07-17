@@ -35,6 +35,7 @@ import com.rs.keepcart.newsPaperList.NewsPaperList;
 import com.rs.keepcart.salesReport.SalesReportActivity;
 import com.rs.keepcart.salesReport.SalesReportFragment;
 import com.rs.keepcart.userPart_appUserScreens.billsPayment.BillsPaymentActivity;
+import com.rs.keepcart.userPart_appUserScreens.payNowAtGateWay.PayNowActivity;
 import com.rs.keepcart.userPart_appUserScreens.payOtherBills.PayOthersBillActivity;
 import com.rs.keepcart.userPart_appUserScreens.rawFiles.PlansAndPacksActivity;
 import com.rs.keepcart.userPart_appUserScreens.shopAndExtra.MagaZineTabActivity;
@@ -257,7 +258,7 @@ public class UserNewsPaperFragment extends Fragment implements View.OnClickListe
                               context.startActivity(intentC);
                             break;
                         case 3:
-                            Intent intentB = new Intent(context, BillsPaymentActivity.class);
+                            Intent intentB = new Intent(context, PayNowActivity.class);
                             context.startActivity(intentB);
                             break;
                         case 4:

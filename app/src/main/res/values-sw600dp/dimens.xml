@@ -176,5 +176,6 @@
     <dimen name="margin_top_photo">120dp</dimen>
     <dimen name="margin_top_cardview">158dp</dimen>
     <dimen name="profile_Image_payotherBills">112sp</dimen>
+    <dimen name="frame_layout_height">80sp</dimen>
 
 </resources>

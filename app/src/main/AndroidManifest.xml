@@ -121,7 +121,8 @@
         <activity android:name=".userPart_appUserScreens.billsPayment.BillsPaymentActivity" />
         <activity android:name=".userPart_appUserScreens.you_profile.YouActivity" />
         <activity android:name=".userPart_appUserScreens.userProfile.UserProfileActivity" />
-        <activity android:name=".userPart_appUserScreens.payOtherBills.PayOthersBillActivity"></activity>
+        <activity android:name=".userPart_appUserScreens.payOtherBills.PayOthersBillActivity" />
+        <activity android:name=".userPart_appUserScreens.payNowAtGateWay.PayNowActivity"></activity>
     </application>
 
 </manifest>
